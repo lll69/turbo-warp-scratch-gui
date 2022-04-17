@@ -20,3 +20,10 @@ jobs:
     - run: npm install
     - run: npm run build
     - run: npm run test:unit
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2.6.0
+      with:
+        build_dir: build
+        verbose: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
