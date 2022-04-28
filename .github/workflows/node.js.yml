@@ -20,6 +20,7 @@ jobs:
     - run: npm install
     - run: npm run build
     - run: npm run test:unit
+    - run: date > build/build-date.html
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.6.0
       with:
