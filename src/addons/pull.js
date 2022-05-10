@@ -69,11 +69,21 @@ const commitHash = childProcess.execSync('git rev-parse --short HEAD')
 class GeneratedImports {
     constructor () {
         this.source = '';
-        this.imports = 0;
+        this.namespaces = new Map();
     }
 
-    add (src) {
-        const importName = `_import${this.imports++}`;
+    add (src, namespace) {
+        namespace = namespace.replace(/[^\w\d_]/g, '_');
+
+        const count = this.namespaces.get(namespace) || 1;
+        this.namespaces.set(namespace, count + 1);
+
+        // All identifiers should start with _ so things like debugger and 2d-color-picker will be valid identifiers
+        let importName = `_${namespace}`;
+        if (count !== 1) {
+            importName += `${count}`;
+        }
+
         this.source += `import ${importName} from ${JSON.stringify(src)};\n`;
         return importName;
     }
@@ -217,12 +227,12 @@ const generateRuntimeEntry = (id, manifest) => {
     let exportSection = 'export const resources = {\n';
     for (const userscript of manifest.userscripts || []) {
         const src = userscript.url;
-        const importName = importSection.add(`./${src}`);
+        const importName = importSection.add(`./${src}`, 'js');
         exportSection += `  ${JSON.stringify(src)}: ${importName},\n`;
     }
     for (const userstyle of manifest.userstyles || []) {
         const src = userstyle.url;
-        const importName = importSection.add(`!css-loader!./${src}`);
+        const importName = importSection.add(`!css-loader!./${src}`, 'css');
         exportSection += `  ${JSON.stringify(src)}: ${importName},\n`;
     }
     exportSection += '};\n';
@@ -334,7 +344,7 @@ const generateEntries = (items, callback) => {
         } else if (type === 'lazy-require') {
             exportSection += `  ${JSON.stringify(i)}: () => require(${JSON.stringify(src)}),\n`;
         } else if (type === 'eager-import') {
-            const importName = importSection.add(src);
+            const importName = importSection.add(src, i);
             exportSection += `  ${JSON.stringify(i)}: ${importName},\n`;
         } else {
             throw new Error(`Unknown type: ${type}`);
@@ -406,9 +416,9 @@ for (const file of l10nFiles) {
     const runtimePath = pathUtil.resolve(__dirname, 'addons-l10n', `${fixedName}.json`);
     const settingsPath = pathUtil.resolve(__dirname, 'addons-l10n-settings', `${fixedName}.json`);
     const {settings, runtime} = parseMessages(oldDirectory);
-    fs.writeFileSync(runtimePath, JSON.stringify(runtime));
+    fs.writeFileSync(runtimePath, JSON.stringify(runtime, null, 4));
     if (fixedName !== 'en') {
-        fs.writeFileSync(settingsPath, JSON.stringify(settings));
+        fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 4));
     }
 }
 
