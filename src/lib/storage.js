@@ -51,8 +51,7 @@ class Storage extends ScratchStorage {
         this.assetHost = assetHost;
     }
     getAssetGetConfig (asset) {
-        // return `${this.assetHost}/internalapi/asset/${asset.assetId}.${asset.dataFormat}/get/`;
-        return `https://lll69.github.io/turbo-warp-scratch-gui/static/assets/${asset.assetId}.${asset.dataFormat}/`;
+        return `${this.assetHost}/internalapi/asset/${asset.assetId}.${asset.dataFormat}/get/`;
     }
     getAssetCreateConfig (asset) {
         return {
