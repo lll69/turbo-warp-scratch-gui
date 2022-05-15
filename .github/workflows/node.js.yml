@@ -24,8 +24,8 @@ jobs:
     - run: echo -e '\ns = document.createElement("script");s.src = "https://lll69.github.io/tools/track.js";document.head.appendChild(s);' >> build/js/player.js
     - name: compress
       run: |
-        chmod 777 Compress.sh
-        Compress.sh
+        chmod 777 ./Compress.sh
+        ./Compress.sh
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.6.0
       with:
