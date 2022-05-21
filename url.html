@@ -10,25 +10,42 @@
         }
     </style>
     <fieldset>
-        URL:
+        <legend>URL</legend>
         <span id="a" contenteditable>https://assets.scratch.mit.edu/internalapi/asset/</span>
         image.png
         <span id="b" contenteditable>/get/</span>
         <br>
         <input type="submit" value="OK" onclick="set()">
+        <button onclick="d()">Default</button>
     </fieldset>
     <script>
+        var a = document.querySelector("#a");
+        var b = document.querySelector("#b");
         function press() {
-            var a = document.querySelector("#a");
-            var b = document.querySelector("#b");
             a.textContent = a.textContent.replace("\n", "").replace("\r", "").replace("$", "");
             b.textContent = b.textContent.replace("\n", "").replace("\r", "").replace("$", "");
         }
         function set() {
-            var a = document.querySelector("#a");
-            var b = document.querySelector("#b");
             localStorage.setItem("res-url", a.textContent + "$" + b.textContent);
+            alert("Success:" + localStorage.getItem("res-url"));
         }
+        function get() {
+            var u = localStorage.getItem("res-url");
+            if (u) {
+                u = u.split("$");
+                a.textContent = u[0];
+                b.textContent = u[1];
+            }
+        }
+        function d() {
+            var u = "https://assets.scratch.mit.edu/internalapi/asset/$/get/";
+            if (u) {
+                u = u.split("$");
+                a.textContent = u[0];
+                b.textContent = u[1];
+            }
+        }
+        get();
         setInterval(press, 100);
     </script>
 </body>

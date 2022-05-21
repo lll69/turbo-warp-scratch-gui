@@ -127,7 +127,8 @@ class LibraryItemComponent extends React.PureComponent {
                         onMouseEnter={this.props.showPlayButton ? this.props.onMouseEnter : null}
                         onMouseLeave={this.props.showPlayButton ? this.props.onMouseLeave : null}
                     >
-                        <img
+                        <img 
+                            referrerpolicy="no-referrer"
                             className={styles.libraryItemImage}
                             loading="lazy"
                             src={this.props.iconURL}
