@@ -1013,14 +1013,7 @@ class AddonSettingsComponent extends React.Component {
                             />
                         </div>
 
-                        <a
-                            href="url.html"
-                            target="_blank"
-                            className={styles.feedbackButtonOuter+" "+classNames(styles.tag, styles.tagBeta)}
-                            style={{color:"white!important"}}
-                        >
-                                Set URL
-                        </a>
+                       
                         <a
                             href="https://scratch.mit.edu/users/World_Languages/#comments"
                             target="_blank"
@@ -1030,6 +1023,14 @@ class AddonSettingsComponent extends React.Component {
                             <span className={styles.feedbackButtonInner}>
                                 {settingsTranslations.addonFeedback}
                             </span>
+                        </a>
+                        <a
+                            href="url.html"
+                            target="_blank"
+                            className={styles.feedbackButtonOuter+" "+classNames(styles.tag, styles.tagBeta)}
+                            style={{color:"white!important"}}
+                        >
+                                Set URL
                         </a>
                     </div>
                     {this.state.dirty && (
