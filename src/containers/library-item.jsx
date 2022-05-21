@@ -103,10 +103,19 @@ class LibraryItem extends React.PureComponent {
         }
         return iconMd5Prop;
     }
+    getURL () {
+        if (localStorage && (url = localStorage.getItem("res-url").toString())){
+            url = url.split("$");
+            return url;
+        } else {
+            return "https://cdn.assets.scratch.mit.edu/internalapi/asset/$/get/".split("$");
+        }
+    }
     render () {
         const iconMd5 = this.curIconMd5();
+        const u = this.getURL();
         const iconURL = iconMd5 ?
-            `https://cdn.assets.scratch.mit.edu/internalapi/asset/${iconMd5}/get/` :
+            u[0] + iconMd5 + u[1]:
             this.props.iconRawURL;
         return (
             <LibraryItemComponent

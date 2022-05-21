@@ -50,8 +50,17 @@ class Storage extends ScratchStorage {
     setAssetHost (assetHost) {
         this.assetHost = assetHost;
     }
+    getURL () {
+        if (localStorage && (url = localStorage.getItem("res-url"))){
+            url = url.toString().split("$");
+            return url;
+        } else {
+            return `${this.assetHost}/internalapi/asset/$/get/`.split("$");
+        }
+    }
     getAssetGetConfig (asset) {
-        return `${this.assetHost}/internalapi/asset/${asset.assetId}.${asset.dataFormat}/get/`;
+        const u = this.getURL();
+        return u[0] + `${asset.assetId}.${asset.dataFormat}` + u[1];
     }
     getAssetCreateConfig (asset) {
         return {
