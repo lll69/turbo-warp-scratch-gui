@@ -104,8 +104,8 @@ class LibraryItem extends React.PureComponent {
         return iconMd5Prop;
     }
     getURL () {
-        if (localStorage && (url = localStorage.getItem("res-url").toString())){
-            url = url.split("$");
+        if (localStorage && (url = localStorage.getItem("res-url"))){
+            url = url.toString().split("$");
             return url;
         } else {
             return "https://cdn.assets.scratch.mit.edu/internalapi/asset/$/get/".split("$");

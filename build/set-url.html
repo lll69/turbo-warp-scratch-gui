@@ -1,0 +1,36 @@
+<html>
+
+<body>
+    <style>
+        span {
+            border-style: inset;
+            -webkit-user-modify: read-write-plaintext-only;
+            -moz-user-modify: read-write-plaintext-only;
+            user-modify: read-write-plaintext-only;
+        }
+    </style>
+    <fieldset>
+        URL:
+        <span id="a" contenteditable>https://assets.scratch.mit.edu/internalapi/asset/</span>
+        image.png
+        <span id="b" contenteditable>/get/</span>
+        <br>
+        <input type="submit" value="OK" onclick="set()">
+    </fieldset>
+    <script>
+        function press() {
+            var a = document.querySelector("#a");
+            var b = document.querySelector("#b");
+            a.textContent = a.textContent.replace("\n", "").replace("\r", "").replace("$", "");
+            b.textContent = b.textContent.replace("\n", "").replace("\r", "").replace("$", "");
+        }
+        function set() {
+            var a = document.querySelector("#a");
+            var b = document.querySelector("#b");
+            localStorage.setItem("res-url", a.textContent + "$" + b.textContent);
+        }
+        setInterval(press, 100);
+    </script>
+</body>
+
+</html>
