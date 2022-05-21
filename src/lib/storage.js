@@ -51,6 +51,7 @@ class Storage extends ScratchStorage {
         this.assetHost = assetHost;
     }
     getURL () {
+        var url = "";
         if (localStorage && (url = localStorage.getItem("res-url"))){
             url = url.toString().split("$");
             return url;

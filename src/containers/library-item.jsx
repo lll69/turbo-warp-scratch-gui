@@ -104,6 +104,7 @@ class LibraryItem extends React.PureComponent {
         return iconMd5Prop;
     }
     getURL () {
+        var url = "";
         if (localStorage && (url = localStorage.getItem("res-url"))){
             url = url.toString().split("$");
             return url;
