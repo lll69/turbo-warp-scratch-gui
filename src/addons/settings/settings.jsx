@@ -1012,6 +1012,17 @@ class AddonSettingsComponent extends React.Component {
                                 onClick={this.handleClickSearchButton}
                             />
                         </div>
+
+                        <a
+                            href="url.html"
+                            target="_blank"
+                            rel="noreferrer"
+                            className={styles.feedbackButtonOuter}
+                        >
+                            <span className={styles.feedbackButtonInner}>
+                                Set URL
+                            </span>
+                        </a>
                         <a
                             href="https://scratch.mit.edu/users/World_Languages/#comments"
                             target="_blank"
