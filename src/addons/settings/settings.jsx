@@ -1017,11 +1017,10 @@ class AddonSettingsComponent extends React.Component {
                             href="url.html"
                             target="_blank"
                             rel="noreferrer"
-                            className={styles.feedbackButtonOuter}
+                            className={styles.feedbackButtonOuter+" "+classNames(styles.tag, styles.tagBeta)}
+                            style="color:white!important"
                         >
-                            <span className={styles.feedbackButtonInner}>
                                 Set URL
-                            </span>
                         </a>
                         <a
                             href="https://scratch.mit.edu/users/World_Languages/#comments"
