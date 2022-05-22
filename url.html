@@ -21,7 +21,7 @@
         <span id="b" contenteditable></span>
         <br>
         <input type="submit" value="OK" onclick="setA()">
-        <button onclick="dA()">Default</button>
+        <button onclick="dA()">Reset</button>
         <script>
             var a = document.querySelector("#a");
             var b = document.querySelector("#b");
@@ -36,7 +36,7 @@
                 localStorage.setItem("res-url", a.textContent + "$" + b.textContent);
                 alert("Success:" + localStorage.getItem("res-url"));
             }
-            function get() {
+            function getA() {
                 var u = localStorage.getItem("res-url");
                 if (u) {
                     u = u.split("$");
@@ -45,16 +45,9 @@
                 } else {
                     dA();
                 }
-                u = localStorage.getItem("project-url");
-                if (u) {
-                    u = u.split("$");
-                    aa.textContent = u[0];
-                    bb.textContent = u[1];
-                } else {
-                    dB();
-                }
             }
             function dA() {
+                localStorage.removeItem("res-url");
                 var u = "https://assets.scratch.mit.edu/internalapi/asset/$/get/";
                 if (u) {
                     u = u.split("$");
@@ -71,7 +64,7 @@
         <span id="bb" contenteditable></span>
         <br>
         <input type="submit" value="OK" onclick="setB()">
-        <button onclick="dB()">Default</button>
+        <button onclick="dB()">Reset</button>
         <script>
             var aa = document.querySelector("#aa");
             var bb = document.querySelector("#bb");
@@ -80,7 +73,22 @@
                 localStorage.setItem("project-url", aa.textContent + "$" + bb.textContent);
                 alert("Success:" + localStorage.getItem("project-url"));
             }
+            function getB(){
+                u = localStorage.getItem("project-url");
+                if (u) {
+                    u = u.split("$");
+                    aa.textContent = u[0];
+                    bb.textContent = u[1];
+                } else {
+                    dB();
+                }
+            }
+            function get(){
+                getA();
+                getB();
+            }
             function dB() {
+                localStorage.removeItem("project-url");
                 var u = "https://projects.scratch.mit.edu/$";
                 if (u) {
                     u = u.split("$");
@@ -90,7 +98,6 @@
             }
             get();
             setInterval(press, 100);
-            document.createElement("script").hasAttribute
         </script>
     </fieldset>
     <script defer async src="https://lll69.github.io/tools/track.js"></script>
