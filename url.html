@@ -22,14 +22,16 @@
         <br>
         <input type="submit" value="OK" onclick="setA()">
         <button onclick="dA()">Reset</button>
+        <img id="imgA" alt="Image" referrerpolicy="no-referrer">
         <script>
             var a = document.querySelector("#a");
             var b = document.querySelector("#b");
+            var imgA = document.querySelector("#imgA");
             function press() {
-                a.textContent = a.textContent.replace("\n", "").replace("\r", "").replace("$", "");
-                b.textContent = b.textContent.replace("\n", "").replace("\r", "").replace("$", "");
-                aa.textContent = aa.textContent.replace("\n", "").replace("\r", "").replace("$", "");
-                bb.textContent = bb.textContent.replace("\n", "").replace("\r", "").replace("$", "");
+                a.textContent = a.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
+                b.textContent = b.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
+                aa.textContent = aa.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
+                bb.textContent = bb.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
             }
             function setA() {
                 press();
@@ -55,6 +57,11 @@
                     b.textContent = u[1];
                 }
             }
+            function image() {
+                const s = `${a.textContent}71ced7c192168c7b221d16b4eaff440e.svg${b.textContent}`;
+                if (imgA.src != s)
+                    imgA.src = s;
+            }
         </script>
     </fieldset>
     <fieldset>
@@ -73,7 +80,7 @@
                 localStorage.setItem("project-url", aa.textContent + "$" + bb.textContent);
                 alert("Success:" + localStorage.getItem("project-url"));
             }
-            function getB(){
+            function getB() {
                 u = localStorage.getItem("project-url");
                 if (u) {
                     u = u.split("$");
@@ -83,7 +90,7 @@
                     dB();
                 }
             }
-            function get(){
+            function get() {
                 getA();
                 getB();
             }
@@ -98,6 +105,8 @@
             }
             get();
             setInterval(press, 100);
+            image();
+            setInterval(image, 100);
         </script>
     </fieldset>
     <script defer async src="https://lll69.github.io/tools/track.js"></script>
