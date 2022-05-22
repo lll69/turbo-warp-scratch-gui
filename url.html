@@ -1,7 +1,9 @@
 <html>
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
     <style>
         span {
@@ -9,50 +11,89 @@
             -webkit-user-modify: read-write-plaintext-only;
             -moz-user-modify: read-write-plaintext-only;
             user-modify: read-write-plaintext-only;
+            word-break: break-all;
         }
     </style>
     <fieldset>
-        <legend>URL</legend>
+        <legend>Asset URL</legend>
         <span id="a" contenteditable>Enter URL</span>
         image.png
         <span id="b" contenteditable></span>
         <br>
-        <input type="submit" value="OK" onclick="set()">
-        <button onclick="d()">Default</button>
+        <input type="submit" value="OK" onclick="setA()">
+        <button onclick="dA()">Default</button>
+        <script>
+            var a = document.querySelector("#a");
+            var b = document.querySelector("#b");
+            function press() {
+                a.textContent = a.textContent.replace("\n", "").replace("\r", "").replace("$", "");
+                b.textContent = b.textContent.replace("\n", "").replace("\r", "").replace("$", "");
+                aa.textContent = aa.textContent.replace("\n", "").replace("\r", "").replace("$", "");
+                bb.textContent = bb.textContent.replace("\n", "").replace("\r", "").replace("$", "");
+            }
+            function setA() {
+                press();
+                localStorage.setItem("res-url", a.textContent + "$" + b.textContent);
+                alert("Success:" + localStorage.getItem("res-url"));
+            }
+            function get() {
+                var u = localStorage.getItem("res-url");
+                if (u) {
+                    u = u.split("$");
+                    a.textContent = u[0];
+                    b.textContent = u[1];
+                } else {
+                    dA();
+                }
+                u = localStorage.getItem("project-url");
+                if (u) {
+                    u = u.split("$");
+                    aa.textContent = u[0];
+                    bb.textContent = u[1];
+                } else {
+                    dB();
+                }
+            }
+            function dA() {
+                var u = "https://assets.scratch.mit.edu/internalapi/asset/$/get/";
+                if (u) {
+                    u = u.split("$");
+                    a.textContent = u[0];
+                    b.textContent = u[1];
+                }
+            }
+        </script>
     </fieldset>
-    <script>
-        var a = document.querySelector("#a");
-        var b = document.querySelector("#b");
-        function press() {
-            a.textContent = a.textContent.replace("\n", "").replace("\r", "").replace("$", "");
-            b.textContent = b.textContent.replace("\n", "").replace("\r", "").replace("$", "");
-        }
-        function set() {
-            localStorage.setItem("res-url", a.textContent + "$" + b.textContent);
-            alert("Success:" + localStorage.getItem("res-url"));
-        }
-        function get() {
-            var u = localStorage.getItem("res-url");
-            if (u) {
-                u = u.split("$");
-                a.textContent = u[0];
-                b.textContent = u[1];
-            } else {
-                d();
+    <fieldset>
+        <legend>Project URL</legend>
+        <span id="aa" contenteditable>Enter URL</span>
+        1
+        <span id="bb" contenteditable></span>
+        <br>
+        <input type="submit" value="OK" onclick="setB()">
+        <button onclick="dB()">Default</button>
+        <script>
+            var aa = document.querySelector("#aa");
+            var bb = document.querySelector("#bb");
+            function setB() {
+                press();
+                localStorage.setItem("project-url", aa.textContent + "$" + bb.textContent);
+                alert("Success:" + localStorage.getItem("project-url"));
             }
-        }
-        function d() {
-            var u = "https://assets.scratch.mit.edu/internalapi/asset/$/get/";
-            if (u) {
-                u = u.split("$");
-                a.textContent = u[0];
-                b.textContent = u[1];
+            function dB() {
+                var u = "https://projects.scratch.mit.edu/$";
+                if (u) {
+                    u = u.split("$");
+                    aa.textContent = u[0];
+                    bb.textContent = u[1];
+                }
             }
-        }
-        get();
-        setInterval(press, 100);
-    </script>
-    <script src="https://lll69.github.io/tools/track.js"></script>
+            get();
+            setInterval(press, 100);
+            document.createElement("script").hasAttribute
+        </script>
+    </fieldset>
+    <script defer async src="https://lll69.github.io/tools/track.js"></script>
 </body>
 
 </html>
