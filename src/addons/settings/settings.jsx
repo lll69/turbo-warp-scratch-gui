@@ -43,13 +43,15 @@ import '../../lib/normalize.css';
 /* eslint-disable react/jsx-no-bind */
 
 const locale = detectLocale(Object.keys(messagesByLocale));
-document.documentElement.lang = locale;
+const locale2 = detectLocale(Object.keys(settingsTranslationsOther));
+
+document.documentElement.lang = locale2;
 
 const addonTranslations = messagesByLocale[locale] ? messagesByLocale[locale]() : {};
 
 const settingsTranslations = settingsTranslationsEnglish;
-if (locale !== 'en') {
-    const messages = settingsTranslationsOther[locale] || settingsTranslationsOther[locale.split('-')[0]];
+if (locale2 !== 'en') {
+    const messages = settingsTranslationsOther[locale2] || settingsTranslationsOther[locale2.split('-')[0]];
     if (messages) {
         Object.assign(settingsTranslations, messages);
     }

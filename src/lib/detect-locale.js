@@ -17,7 +17,7 @@ export const LANGUAGE_KEY = 'tw:language';
 const detectLocale = supportedLocales => {
     // tw: read language from localStorage
     try {
-        const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+        const storedLanguage = localStorage.getItem(LANGUAGE_KEY).toLowerCase();
         if (storedLanguage && supportedLocales.includes(storedLanguage)) {
             return storedLanguage;
         }
