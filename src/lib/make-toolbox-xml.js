@@ -440,6 +440,11 @@ const control = function (isInitialSetup, isStage) {
             </block>
             <block type="control_delete_this_clone"/>
         `}
+        ${blockSeparator}
+        <block type="control_get_counter"/>
+        <block type="control_incr_counter"/>
+        <block type="control_clear_counter"/>
+        <block type="control_all_at_once"/>
         ${categorySeparator}
     </category>
     `;
@@ -735,6 +740,7 @@ const myBlocks = function () {
 const extraTurboWarpBlocks = `
 <block type="argument_reporter_boolean"><field name="VALUE">is compiled?</field></block>
 <block type="argument_reporter_boolean"><field name="VALUE">is TurboWarp?</field></block>
+<block type="argument_reporter_string_number"><field name="VALUE">last key pressed</field></block>
 `;
 /* eslint-enable no-unused-vars */
 
