@@ -164,7 +164,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
     const hmm = translate('LOOKS_HMM', 'Hmm...');
     return `
     <category name="%{BKY_CATEGORY_LOOKS}" id="looks" colour="#9966FF" secondaryColour="#774DCB">
-        ${isStage ? '' : `
+        
         <block type="looks_sayforsecs">
             <value name="MESSAGE">
                 <shadow type="text">
@@ -204,7 +204,6 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             </value>
         </block>
         ${blockSeparator}
-        `}
         ${isStage ? `
             <block type="looks_switchbackdropto">
                 <value name="BACKDROP">
@@ -354,6 +353,11 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
 const events = function (isInitialSetup, isStage) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
+        <block type="event_whentouchingobject">
+            <value name="TOUCHINGOBJECTMENU">
+                <shadow type="event_touchingobjectmenu"></shadow>
+            </value>
+        </block>
         <block type="event_whenflagclicked"/>
         <block type="event_whenkeypressed">
         </block>
@@ -506,6 +510,7 @@ const sensing = function (isInitialSetup, isStage) {
         `}
         ${blockSeparator}
         <block id="loudness" type="sensing_loudness"/>
+        <block type="sensing_loud"/>
         ${blockSeparator}
         <block id="timer" type="sensing_timer"/>
         <block type="sensing_resettimer"/>
