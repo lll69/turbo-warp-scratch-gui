@@ -27,6 +27,30 @@ import {MISSING_PROJECT_ID} from './tw-missing-project';
 import VM from 'scratch-vm';
 import * as progressMonitor from '../components/loader/tw-progress-monitor';
 
+// TW: Temporary hack for project tokens
+const fetchProjectToken = projectId => {
+    if (projectId === '0') {
+        return Promise.resolve(null);
+    }
+    const params = new URLSearchParams(location.search);
+    if (params.has('token')) {
+        return Promise.resolve(params.get('token'));
+    }
+    return fetch(`https://trampoline.turbowarp.org/proxy/projects/${projectId}`)
+        .then(r => {
+            if (!r.ok) return null;
+            return r.json();
+        })
+        .then(dataOrNull => {
+            const token = dataOrNull ? dataOrNull.project_token : null;
+            return token;
+        })
+        .catch(err => {
+            log.error(err);
+            return null;
+        });
+};
+
 /* Higher Order Component to provide behavior for loading projects by id. If
  * there's no id, the default project is loaded.
  * @param {React.Component} WrappedComponent component to receive projectData prop
@@ -40,6 +64,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 'fetchProject'
             ]);
             storage.setProjectHost(props.projectHost);
+            storage.setProjectToken(props.projectToken);
             storage.setAssetHost(props.assetHost);
             storage.setTranslatorFunction(props.intl.formatMessage);
             // props.projectId might be unset, in which case we use our default;
@@ -57,6 +82,9 @@ const ProjectFetcherHOC = function (WrappedComponent) {
         componentDidUpdate (prevProps) {
             if (prevProps.projectHost !== this.props.projectHost) {
                 storage.setProjectHost(this.props.projectHost);
+            }
+            if (prevProps.projectToken !== this.props.projectToken) {
+                storage.setProjectToken(this.props.projectToken);
             }
             if (prevProps.assetHost !== this.props.assetHost) {
                 storage.setAssetHost(this.props.assetHost);
@@ -96,8 +124,13 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     })
                     .then(buffer => ({data: buffer}));
             } else {
-                assetPromise = storage
-                    .load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
+                // TW: Temporary hack for project tokens
+                assetPromise = fetchProjectToken(projectId)
+                    .then(token => {
+                        // TODO: for now we won't actually set the token until we're sure there won't be any surprises
+                        // storage.setProjectToken(token);
+                        return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
+                    });
             }
 
             return assetPromise
@@ -168,6 +201,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
         onFetchedProjectData: PropTypes.func,
         onProjectUnchanged: PropTypes.func,
         projectHost: PropTypes.string,
+        projectToken: PropTypes.string,
         projectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         reduxProjectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         setProjectId: PropTypes.func,
