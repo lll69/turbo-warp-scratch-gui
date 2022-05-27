@@ -24,6 +24,7 @@
         <button onclick="dA()">Reset</button>
         <img id="imgA" referrerpolicy="no-referrer" height="30">
         <script>
+            var src = "$";
             var a = document.querySelector("#a");
             var b = document.querySelector("#b");
             var imgA = document.querySelector("#imgA");
@@ -59,8 +60,8 @@
             }
             function image() {
                 const s = `${a.textContent}71ced7c192168c7b221d16b4eaff440e.svg${b.textContent}`;
-                if (imgA.src != s)
-                    imgA.src = s;
+                if (src != s)
+                    imgA.src = src = s;
             }
         </script>
     </fieldset>
