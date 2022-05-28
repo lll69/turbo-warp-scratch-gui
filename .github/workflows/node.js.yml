@@ -17,7 +17,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
-    - run: npm install --save scratch-blocks
+    - name: install
+      run: |
+        npm install --save scratch-blocks
+        npm install
     - run: npm ci
     - run: npm run build
     - run: npm run test:unit
