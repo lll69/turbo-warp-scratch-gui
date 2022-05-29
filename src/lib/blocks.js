@@ -179,7 +179,8 @@ export default function (vm) {
     ScratchBlocks.Blocks.motion_pointtowards_menu.init = function () {
         const mouse = ScratchBlocks.ScratchMsgs.translate('MOTION_POINTTOWARDS_POINTER', 'mouse-pointer');
         const json = jsonForMenuBlock('TOWARDS', spriteMenu, motionColors, [
-            [mouse, '_mouse_']
+            [mouse, '_mouse_'],
+            [random, '_random_']
         ]);
         this.jsonInit(json);
     };
@@ -303,6 +304,16 @@ export default function (vm) {
     };
 
     ScratchBlocks.Blocks.sensing_touchingobjectmenu.init = function () {
+        const mouse = ScratchBlocks.ScratchMsgs.translate('SENSING_TOUCHINGOBJECT_POINTER', 'mouse-pointer');
+        const edge = ScratchBlocks.ScratchMsgs.translate('SENSING_TOUCHINGOBJECT_EDGE', 'edge');
+        const json = jsonForMenuBlock('TOUCHINGOBJECTMENU', spriteMenu, sensingColors, [
+            [mouse, '_mouse_'],
+            [edge, '_edge_']
+        ]);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.event_touchingobjectmenu.init = function () {
         const mouse = ScratchBlocks.ScratchMsgs.translate('SENSING_TOUCHINGOBJECT_POINTER', 'mouse-pointer');
         const edge = ScratchBlocks.ScratchMsgs.translate('SENSING_TOUCHINGOBJECT_EDGE', 'edge');
         const json = jsonForMenuBlock('TOUCHINGOBJECTMENU', spriteMenu, sensingColors, [
