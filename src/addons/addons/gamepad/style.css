@@ -20,7 +20,6 @@
   flex-direction: column;
 }
 .sa-gamepad-popup-content {
-  background-color: white;
   padding: 1.5rem 2.25rem;
   height: 100%;
   overflow-y: auto;
