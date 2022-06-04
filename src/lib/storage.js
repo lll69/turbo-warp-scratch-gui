@@ -8,11 +8,11 @@ import missingProject from './tw-missing-project';
  * @todo make this more configurable
  */
 class Storage extends ScratchStorage {
-    constructor () {
+    constructor() {
         super();
         this.cacheDefaultProject();
     }
-    addOfficialScratchWebStores () {
+    addOfficialScratchWebStores() {
         this.addWebStore(
             [this.AssetType.Project],
             this.getProjectGetConfig.bind(this),
@@ -29,56 +29,63 @@ class Storage extends ScratchStorage {
             this.getAssetCreateConfig.bind(this)
         );
     }
-    setProjectHost (projectHost) {
+    setProjectHost(projectHost) {
         this.projectHost = projectHost;
     }
-    setProjectToken (projectToken) {
+    setProjectToken(projectToken) {
         this.projectToken = projectToken;
     }
-    getProjectURL () {
+    getProjectURL() {
         var url = "";
-        if (localStorage && (url = localStorage.getItem("project-url"))){
+        if (localStorage && (url = localStorage.getItem("project-url"))) {
             url = url.toString().split("$");
             return url;
         } else {
             return `${this.projectHost}/$`.split("$");
         }
     }
-    getProjectGetConfig (projectAsset) {
+    getProjectGetConfig(projectAsset) {
         const u = this.getProjectURL();
         const path = u[0] + `${projectAsset.assetId}` + u[1];
         const qs = this.projectToken ? `?token=${this.projectToken}` : '';
         return path + qs;
     }
-    getProjectCreateConfig () {
+    getProjectCreateConfig() {
         return {
             url: `${this.projectHost}/`,
             withCredentials: true
         };
     }
-    getProjectUpdateConfig (projectAsset) {
+    getProjectUpdateConfig(projectAsset) {
         return {
             url: `${this.projectHost}/${projectAsset.assetId}`,
             withCredentials: true
         };
     }
-    setAssetHost (assetHost) {
+    setAssetHost(assetHost) {
         this.assetHost = assetHost;
     }
-    getURL () {
+    getURL() {
         var url = "";
-        if (localStorage && (url = localStorage.getItem("res-url"))){
+        if (localStorage) {
+            url = localStorage.getItem("res-url");
+        }
+        var search = new URLSearchParams(location.search).get("res-url");
+        if (search && search.split("$").length == 2) {
+            url = search;
+        }
+        if (url) {
             url = url.toString().split("$");
             return url;
         } else {
             return `${this.assetHost}/internalapi/asset/$/get/`.split("$");
         }
     }
-    getAssetGetConfig (asset) {
+    getAssetGetConfig(asset) {
         const u = this.getURL();
         return u[0] + `${asset.assetId}.${asset.dataFormat}` + u[1];
     }
-    getAssetCreateConfig (asset) {
+    getAssetCreateConfig(asset) {
         return {
             // There is no such thing as updating assets, but storage assumes it
             // should update if there is an assetId, and the asset store uses the
@@ -89,11 +96,11 @@ class Storage extends ScratchStorage {
             withCredentials: true
         };
     }
-    setTranslatorFunction (translator) {
+    setTranslatorFunction(translator) {
         this.translator = translator;
         this.cacheDefaultProject();
     }
-    cacheDefaultProject () {
+    cacheDefaultProject() {
         const defaultProjectAssets = defaultProject(this.translator);
         defaultProjectAssets.forEach(asset => this.builtinHelper._store(
             this.AssetType[asset.assetType],
