@@ -6,27 +6,34 @@
 
 <body>
     <style>
-        span {
-            border-style: inset;
+        .span {
             -webkit-user-modify: read-write-plaintext-only;
             -moz-user-modify: read-write-plaintext-only;
             user-modify: read-write-plaintext-only;
+        }
+
+        span {
+            border-style: inset;
             word-break: break-all;
+            white-space: nowrap;
         }
     </style>
     <fieldset>
         <legend>Asset URL</legend>
-        <span id="a" contenteditable>Enter URL</span>
+        <span id="a" contenteditable class="span">Enter URL</span>
         image.png
-        <span id="b" contenteditable></span>
+        <span id="b" contenteditable class="span"></span>
         <br>
         <input type="submit" value="OK" onclick="setA()">
         <button onclick="dA()">Reset</button>
         <img id="imgA" referrerpolicy="no-referrer" height="30">
+        <br>
+        <span id="asset-url" style="user-select:all"></span>
         <script>
             var src = "$";
             var a = document.querySelector("#a");
             var b = document.querySelector("#b");
+            var asset_url = document.querySelector("#asset-url");
             var imgA = document.querySelector("#imgA");
             function press() {
                 a.textContent = a.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
@@ -62,14 +69,15 @@
                 const s = `${a.textContent}71ced7c192168c7b221d16b4eaff440e.svg${b.textContent}`;
                 if (src != s)
                     imgA.src = src = s;
+                asset_url.textContent = "https://lll69.github.io/turbo-warp-scratch-gui/?res-url=" + a.textContent + "$" + b.textContent;
             }
         </script>
     </fieldset>
     <fieldset>
         <legend>Project URL</legend>
-        <span id="aa" contenteditable>Enter URL</span>
+        <span id="aa" contenteditable class="span">Enter URL</span>
         1
-        <span id="bb" contenteditable></span>
+        <span id="bb" contenteditable class="span"></span>
         <br>
         <input type="submit" value="OK" onclick="setB()">
         <button onclick="dB()">Reset</button>
