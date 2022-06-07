@@ -2,9 +2,11 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Set URL</title>
+    <link rel="icon" href="https://lll69.github.io/turbo-warp-scratch-gui/favicon.ico" />
 </head>
 
-<body>
+<body onbeforeunload="return status()">
     <style>
         .span {
             -webkit-user-modify: read-write-plaintext-only;
@@ -19,14 +21,13 @@
         }
     </style>
     <fieldset>
-        <legend>Asset URL</legend>
-        <span id="a" contenteditable class="span">Enter URL</span>
+        <legend>Asset URL<img id="imgA" referrerpolicy="no-referrer" height="30" onerror="this.src='/turbo-warp-scratch-gui/static/assets/76b6cb627b95d79705c0b41664064f0e.svg'"></legend>
+        <span id="a" contenteditable class="span"></span>
         image.png
         <span id="b" contenteditable class="span"></span>
         <br>
         <input type="submit" value="OK" onclick="setA()">
         <button onclick="dA()">Reset</button>
-        <img id="imgA" referrerpolicy="no-referrer" height="30">
         <br>
         <span id="asset-url" style="user-select:all"></span>
         <script>
@@ -75,7 +76,7 @@
     </fieldset>
     <fieldset>
         <legend>Project URL</legend>
-        <span id="aa" contenteditable class="span">Enter URL</span>
+        <span id="aa" contenteditable class="span"></span>
         1
         <span id="bb" contenteditable class="span"></span>
         <br>
@@ -118,6 +119,14 @@
             setInterval(image, 100);
         </script>
     </fieldset>
+    <script>
+        function status() {
+            if ((localStorage.getItem("res-url") || "https://assets.scratch.mit.edu/internalapi/asset/$/get/") != `${a.textContent}$${b.textContent})`)
+                return "";
+            else if ((localStorage.getItem("project-url") || "https://projects.scratch.mit.edu/$") != `${aa.textContent}$${bb.textContent}`)
+                return "";
+        }
+    </script>
     <script defer async src="https://lll69.github.io/tools/track.js"></script>
 </body>
 
