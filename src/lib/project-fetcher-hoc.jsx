@@ -32,9 +32,15 @@ const fetchProjectToken = projectId => {
     if (projectId === '0') {
         return Promise.resolve(null);
     }
-    const params = new URLSearchParams(location.search);
-    if (params.has('token')) {
-        return Promise.resolve(params.get('token'));
+    // Parse ?token=abcdef
+    const searchParams = new URLSearchParams(location.search);
+    if (searchParams.has('token')) {
+        return Promise.resolve(searchParams.get('token'));
+    }
+    // Parse #1?token=abcdef
+    const hashParams = new URLSearchParams(location.hash.split('?')[1]);
+    if (hashParams.has('token')) {
+        return Promise.resolve(hashParams.get('token'));
     }
     return fetch(`https://trampoline.turbowarp.org/proxy/projects/${projectId}`)
         .then(r => {
@@ -43,7 +49,8 @@ const fetchProjectToken = projectId => {
         })
         .then(dataOrNull => {
             const token = dataOrNull ? dataOrNull.project_token : null;
-            return token;
+            // We won't use the token for now.
+            return null;
         })
         .catch(err => {
             log.error(err);
@@ -127,8 +134,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 // TW: Temporary hack for project tokens
                 assetPromise = fetchProjectToken(projectId)
                     .then(token => {
-                        // TODO: for now we won't actually set the token until we're sure there won't be any surprises
-                        // storage.setProjectToken(token);
+                        storage.setProjectToken(token);
                         return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
                     });
             }
