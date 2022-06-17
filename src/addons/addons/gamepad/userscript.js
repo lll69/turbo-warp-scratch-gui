@@ -315,50 +315,6 @@ export default async function ({ addon, global, console, msg }) {
     { capture: true }
   );
 
-  const virtualCursorElement = document.createElement("img");
-  virtualCursorElement.hidden = true;
-  virtualCursorElement.className = "sa-gamepad-cursor";
-  virtualCursorElement.src = _twGetAsset("/cursor.png");
-  addon.self.addEventListener("disabled", () => {
-    virtualCursorElement.hidden = true;
-  });
-
-  let hideCursorTimeout;
-
-  const hideRealCursor = () => {
-    document.body.classList.add("sa-gamepad-hide-cursor");
-  };
-  const showRealCursor = () => {
-    document.body.classList.remove("sa-gamepad-hide-cursor");
-  };
-  const virtualCursorSetVisible = (visible) => {
-    virtualCursorElement.hidden = !visible;
-    clearTimeout(hideCursorTimeout);
-    if (visible) {
-      hideRealCursor();
-      hideCursorTimeout = setTimeout(virtualCursorHide, 8000);
-    }
-  };
-  const virtualCursorHide = () => {
-    virtualCursorSetVisible(false);
-  };
-  const virtualCursorSetDown = (down) => {
-    virtualCursorSetVisible(true);
-    virtualCursorElement.classList.toggle("sa-gamepad-cursor-down", down);
-  };
-  const virtualCursorSetPosition = (x, y) => {
-    virtualCursorSetVisible(true);
-    const CURSOR_SIZE = 6;
-    const stageX = width / 2 + x - CURSOR_SIZE / 2;
-    const stageY = height / 2 - y - CURSOR_SIZE / 2;
-    virtualCursorElement.style.transform = `translate(${stageX}px, ${stageY}px)`;
-  };
-
-  document.addEventListener("mousemove", () => {
-    virtualCursorSetVisible(false);
-    showRealCursor();
-  });
-
   let getCanvasSize;
   // Support modern ResizeObserver and slow getBoundingClientRect version for improved browser support (matters for TurboWarp)
   if (window.ResizeObserver) {
@@ -379,18 +335,17 @@ export default async function ({ addon, global, console, msg }) {
     };
   }
 
-  // Both in Scratch space
-  let virtualX = 0;
-  let virtualY = 0;
   const postMouseData = (data) => {
     if (addon.self.disabled || !vmStarted()) return;
     const [rectWidth, rectHeight] = getCanvasSize();
+    if (data.useMovement) {
+      data.movementX = data.deltaX + (rectWidth / 2);
+      data.movementY = data.deltaY + (rectHeight / 2);
+    }
     vm.postIOData("mouse", {
       ...data,
       canvasWidth: rectWidth,
       canvasHeight: rectHeight,
-      x: (virtualX + width / 2) * (rectWidth / width),
-      y: (height / 2 - virtualY) * (rectHeight / height),
     });
   };
   const postKeyboardData = (key, isDown) => {
@@ -402,29 +357,32 @@ export default async function ({ addon, global, console, msg }) {
   };
   const handleGamepadButtonDown = (e) => postKeyboardData(e.detail, true);
   const handleGamepadButtonUp = (e) => postKeyboardData(e.detail, false);
-  const handleGamepadMouseDown = () => {
-    virtualCursorSetDown(true);
+  const handleGamepadMouseDown = (e) => {
     postMouseData({
       isDown: true,
+      button: e.detail,
     });
   };
-  const handleGamepadMouseUp = () => {
-    virtualCursorSetDown(false);
+  const handleGamepadMouseUp = (e) => {
     postMouseData({
       isDown: false,
+      button: e.detail,
     });
   };
   const handleGamepadMouseMove = (e) => {
-    virtualX = e.detail.x;
-    virtualY = e.detail.y;
-    virtualCursorSetPosition(virtualX, virtualY);
-    postMouseData({});
+    const deltaX = e.detail.x;
+    const deltaY = -e.detail.y;
+    const SPEED_MULTIPLIER = 4.0;
+    const [width, height] = getCanvasSize();
+    const zoomMultiplierX = width / vm.runtime.stageWidth;
+    const zoomMultiplierY = height / vm.runtime.stageHeight;
+    postMouseData({
+      useMovement: true,
+      deltaX: deltaX * zoomMultiplierX * SPEED_MULTIPLIER,
+      deltaY: deltaY * zoomMultiplierY * SPEED_MULTIPLIER,
+    });
   };
 
-  gamepad.virtualCursor.maxX = renderer._xRight;
-  gamepad.virtualCursor.minX = renderer._xLeft;
-  gamepad.virtualCursor.maxY = renderer._yTop;
-  gamepad.virtualCursor.minY = renderer._yBottom;
   gamepad.addEventListener("keydown", handleGamepadButtonDown);
   gamepad.addEventListener("keyup", handleGamepadButtonUp);
   gamepad.addEventListener("mousedown", handleGamepadMouseDown);
@@ -450,8 +408,5 @@ export default async function ({ addon, global, console, msg }) {
     } else {
       addon.tab.appendToSharedSpace({ space: "fullscreenStageHeader", element: container, order: 0 });
     }
-
-    const monitorListScaler = document.querySelector("[class^='monitor-list_monitor-list-scaler']");
-    monitorListScaler.appendChild(virtualCursorElement);
   }
 }
