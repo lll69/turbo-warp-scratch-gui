@@ -32,9 +32,10 @@ jobs:
         repo: lll69/turbo-warp-scratch-gui
         token: ${{ secrets.GITHUB_TOKEN }}
         artifact_name: pointerlock
+        rename: pointerlock.zip
     - run: |
         sudo apt install zip
-        unzip pointerlock.zip
+        unzip pointerlock
         tar -xvf pointerlock.tar build
         date > build/build-date.html
         echo -e '\n' >> build/build-date.html
