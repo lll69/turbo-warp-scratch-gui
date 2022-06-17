@@ -34,9 +34,8 @@ jobs:
         artifact_name: pointerlock
         rename: pointerlock.zip
     - run: |
-        sudo apt install zip
         unzip pointerlock
-        tar -xvf pointerlock.tar build
+        tar -xvf pointerlock.tar -C build
         date > build/build-date.html
         echo -e '\n' >> build/build-date.html
         ls -alR >> build/build-date.html
