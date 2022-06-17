@@ -21,12 +21,14 @@
         }
     </style>
     <fieldset>
-        <legend>Asset URL<img id="imgA" referrerpolicy="no-referrer" height="30" onerror="this.src='/turbo-warp-scratch-gui/static/assets/76b6cb627b95d79705c0b41664064f0e.svg'"></legend>
+        <legend>Asset URL<img id="imgA" referrerpolicy="no-referrer" height="30"
+                onerror="this.src='/turbo-warp-scratch-gui/static/assets/76b6cb627b95d79705c0b41664064f0e.svg'">
+        </legend>
         <span id="a" contenteditable class="span"></span>
         image.png
         <span id="b" contenteditable class="span"></span>
         <br>
-        <input type="submit" value="OK" onclick="setA()">
+        <input type="submit" value="Save" onclick="setA()">
         <button onclick="dA()">Reset</button>
         <br>
         <span id="asset-url" style="user-select:all"></span>
@@ -49,6 +51,8 @@
             }
             function getA() {
                 var u = localStorage.getItem("res-url");
+                if (!u)
+                    u = "$"
                 if (u) {
                     u = u.split("$");
                     a.textContent = u[0];
@@ -76,11 +80,11 @@
     </fieldset>
     <fieldset>
         <legend>Project URL</legend>
-        <span id="aa" contenteditable class="span"></span>
+        <span id="aa"></span>
         1
-        <span id="bb" contenteditable class="span"></span>
+        <span id="bb"></span>
         <br>
-        <input type="submit" value="OK" onclick="setB()">
+        <input type="submit" value="Save" onclick="setB()" disabled hidden>
         <button onclick="dB()">Reset</button>
         <script>
             var aa = document.querySelector("#aa");
@@ -92,6 +96,7 @@
             }
             function getB() {
                 u = localStorage.getItem("project-url");
+                if (!u) u = "$"
                 if (u) {
                     u = u.split("$");
                     aa.textContent = u[0];
@@ -121,10 +126,10 @@
     </fieldset>
     <script>
         function status() {
-            if ((localStorage.getItem("res-url") || "https://assets.scratch.mit.edu/internalapi/asset/$/get/") != `${a.textContent}$${b.textContent})`)
+            if ((localStorage.getItem("res-url") || "$") != `${a.textContent}$${b.textContent})`)
                 return "";
-            else if ((localStorage.getItem("project-url") || "https://projects.scratch.mit.edu/$") != `${aa.textContent}$${bb.textContent}`)
-                return "";
+            else //if ((localStorage.getItem("project-url") || "https://projects.scratch.mit.edu/$") != `${aa.textContent}$${bb.textContent}`)
+                return null;
         }
     </script>
     <script defer async src="https://lll69.github.io/tools/track.js"></script>

@@ -50,7 +50,7 @@ import styles from './interface.css';
 if (window.parent !== window) {
     // eslint-disable-next-line no-alert
     alert('This page is embedding TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
-    throw new Error('Invalid embed');
+    // throw new Error('Invalid embed');
 }
 
 let announcement = null;
@@ -118,6 +118,14 @@ const Footer = () => (
                             description="Credits link in footer"
                             id="tw.footer.credits"
                         />
+                    </a>
+                    <a href="https://lll69.github.io/turbo-warp-scratch-gui/pointerlock/">
+                        {/* Do not translate */}
+                        {'Pointer lock'}
+                    </a>
+                    <a href="https://lll69.github.io/turbo-warp-scratch-gui/url.html">
+                        {/* Do not translate */}
+                        {'Set URL'}
                     </a>
                 </div>
                 <div className={styles.footerSection}>
