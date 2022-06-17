@@ -29,7 +29,8 @@ jobs:
       uses: bettermarks/action-artifact-download@0.3.0
       with:
         # Optional, GitHub token
-
+        repo: lll69/turbo-warp-scratch-gui
+        token: ${{ secrets.GITHUB_TOKEN }}
         artifact_name: pointerlock
     - run: |
         sudo apt install p7zip
