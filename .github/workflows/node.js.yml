@@ -24,29 +24,24 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm run test:unit
-    - name: compress
-      run: |
-        chmod 777 ./Compress.sh
-        ./Compress.sh
     - run: cp url.html build/url.html    
     - name: Download artifact
-      uses: aochmann/actions-download-artifact@1.0.0
+      uses: bettermarks/action-artifact-download@0.3.0
       with:
         # Optional, GitHub token
-        github_token: ${{secrets.GITHUB_TOKEN}}
 
-        name: pointerlock
-
-        # Optional, download latest artifact
-        latest: true
-
-        # Optional, directory where to extract artifact
-        path: t
+        artifact_name: pointerlock
     - run: |
+        sudo apt install p7zip
+        7z x pointerlock.zip -o.
         tar -xvf t/pointerlock.tar build
         date > build/build-date.html
         echo -e '\n' >> build/build-date.html
         ls -alR >> build/build-date.html
+    - name: compress
+      run: |
+        chmod 777 ./Compress.sh
+        ./Compress.sh
     - name: script
       run: |
         echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
