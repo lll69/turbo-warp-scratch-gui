@@ -76,7 +76,7 @@
     "redux": "3.7.2",
     "redux-throttle": "0.1.1",
     "scratch-audio": "0.1.0-prerelease.20200528195344",
-    "scratch-blocks": "github:TurboWarp/scratch-blocks#develop-builds",
+    "scratch-blocks": "git+https://github.com/lll69/turbowarp-blocks.git#develop-builds",
     "@turbowarp/scratch-l10n": "^3.999.20220511150714",
     "scratch-paint": "github:TurboWarp/scratch-paint#develop",
     "scratch-render": "github:TurboWarp/scratch-render#develop",

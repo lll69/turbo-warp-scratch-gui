@@ -17,12 +17,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
-    - run: npm install
+    - run: |
+        npm install --save scratch-blocks
+        npm install
     - run: npm run build
     - run: npm run test:unit
-    - run: tar -cvf build.tar build
+    - run: |
+        mv build pointerlock
+        tar -cvf pointerlock.tar pointerlock
+        mv pointerlock build
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
         # A file, directory or wildcard pattern that describes what to upload
-        path: build.tar
+        name: pointerlock
+        path: pointerlock.tar
