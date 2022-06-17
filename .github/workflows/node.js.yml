@@ -28,10 +28,29 @@ jobs:
       run: |
         chmod 777 ./Compress.sh
         ./Compress.sh
-    - run: date > build/build-date.html
-    - run: cp url.html build/url.html
+    - run: cp url.html build/url.html    
+    - name: Download artifact
+      uses: aochmann/actions-download-artifact@1.0.0
+      with:
+        # Optional, GitHub token
+        github_token: ${{secrets.GITHUB_TOKEN}}
+
+        name: pointerlock
+
+        # Optional, download latest artifact
+        latest: true
+
+        # Optional, directory where to extract artifact
+        path: t
+    - run: |
+        tar -xvf t/pointerlock.tar build
+        date > build/build-date.html
+        echo -e '\n' >> build/build-date.html
+        ls -alR >> build/build-date.html
     - name: script
-      run: echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
+      run: |
+        echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
+        echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/pointerlock/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.6.0
       with:
