@@ -33,9 +33,9 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifact_name: pointerlock
     - run: |
-        sudo apt install p7zip
-        7z x pointerlock.zip -o.
-        tar -xvf t/pointerlock.tar build
+        sudo apt install zip
+        unzip pointerlock.zip
+        tar -xvf pointerlock.tar build
         date > build/build-date.html
         echo -e '\n' >> build/build-date.html
         ls -alR >> build/build-date.html
