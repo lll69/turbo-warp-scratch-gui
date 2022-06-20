@@ -24,7 +24,9 @@ jobs:
     #- run: npm ci
     - run: npm run build
     #- run: npm run test:unit
-    - run: cp url.html build/url.html    
+    - run: |
+        cp url.html build/url.html
+        cp 404.html build/404.html
     - name: Download artifact
       uses: bettermarks/action-artifact-download@0.3.0
       with:
