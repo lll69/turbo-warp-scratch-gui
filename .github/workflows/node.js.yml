@@ -19,9 +19,9 @@ jobs:
         node-version: 10.x
     - name: install
       run: |
-        npm install --save scratch-blocks
+        npm install --save scratch-blocks scratch-parser
         npm install
-    - run: npm ci
+    #- run: npm ci
     - run: npm run build
     #- run: npm run test:unit
     - run: cp url.html build/url.html    
@@ -37,7 +37,7 @@ jobs:
         unzip pointerlock
         tar -xvf pointerlock.tar -C build
         date > build/build-date.txt
-        echo -e '\n' >> build/build-date.txt
+        echo -e '\n\n' >> build/build-date.txt
         ls -alR >> build/build-date.txt
     - name: compress
       run: |
