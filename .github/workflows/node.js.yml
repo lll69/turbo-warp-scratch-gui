@@ -21,7 +21,9 @@ jobs:
       run: |
         npm install --save scratch-blocks scratch-parser
         npm install
-    #- run: npm ci
+    - run: |
+        rm -r node_modules/scratch-vm/node_modules/scratch-parser
+        mv node_modules/scratch-parser node_modules/scratch-vm/node_modules/scratch-parser
     - run: npm run build
     #- run: npm run test:unit
     - run: |
