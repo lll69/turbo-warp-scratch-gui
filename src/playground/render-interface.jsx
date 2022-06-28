@@ -181,6 +181,13 @@ const Footer = () => (
                             id="tw.privacy"
                         />
                     </a>
+                    <a href="https://github.com/sponsors/GarboMuffin">
+                        <FormattedMessage
+                            defaultMessage="Donate"
+                            description="Donation link in footer"
+                            id="tw.footer.donate"
+                        />
+                    </a>
                 </div>
             </div>
         </div>
