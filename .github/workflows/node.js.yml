@@ -40,9 +40,6 @@ jobs:
     - run: |
         unzip pointerlock
         tar -xvf pointerlock.tar -C build
-        date > build/build-date.txt
-        echo -e '\n\n' >> build/build-date.txt
-        ls -alR >> build/build-date.txt
     - name: compress
       run: |
         chmod 777 ./Compress.sh
