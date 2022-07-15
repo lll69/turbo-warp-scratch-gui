@@ -49,8 +49,7 @@ const fetchProjectToken = projectId => {
         })
         .then(dataOrNull => {
             const token = dataOrNull ? dataOrNull.project_token : null;
-            // We won't use the token for now.
-            return null;
+            return token;
         })
         .catch(err => {
             log.error(err);
@@ -124,6 +123,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 }
                 assetPromise = progressMonitor.fetchWithProgress(projectUrl)
                     .then(r => {
+                        this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
                         if (!r.ok) {
                             throw new Error(`Request returned status ${r.status}`);
                         }

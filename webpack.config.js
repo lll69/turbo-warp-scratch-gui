@@ -20,7 +20,8 @@ if (root.length > 0 && !root.endsWith('/')) {
 }
 
 const htmlWebpackPluginCommon = {
-    root: root
+    root: root,
+    meta: JSON.parse(process.env.EXTRA_META || '{}')
 };
 
 const base = {
@@ -150,9 +151,7 @@ module.exports = [
                 'process.env.ANNOUNCEMENT': JSON.stringify(process.env.ANNOUNCEMENT || ''),
                 'process.env.ENABLE_SERVICE_WORKER': JSON.stringify(process.env.ENABLE_SERVICE_WORKER || ''),
                 'process.env.ROOT': JSON.stringify(root),
-                'process.env.ROUTING_STYLE': JSON.stringify(process.env.ROUTING_STYLE || 'filehash'),
-                'process.env.PLAUSIBLE_API': JSON.stringify(process.env.PLAUSIBLE_API),
-                'process.env.PLAUSIBLE_DOMAIN': JSON.stringify(process.env.PLAUSIBLE_DOMAIN)
+                'process.env.ROUTING_STYLE': JSON.stringify(process.env.ROUTING_STYLE || 'filehash')
             }),
             new HtmlWebpackPlugin({
                 chunks: ['editor'],
