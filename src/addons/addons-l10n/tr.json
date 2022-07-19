@@ -56,6 +56,8 @@
     "data-category-tweaks-v2/for-all-sprites": "Tüm kuklalar için:",
     "data-category-tweaks-v2/for-this-sprite-only": "Sadece bu kukla için:",
     "data-category-tweaks-v2/list-category": "Listeler",
+    "hide-flyout/lock": "Paleti Kilitle",
+    "hide-flyout/unlock": "Paletin Kilidini Aç",
     "mediarecorder/cancel": "İptal",
     "mediarecorder/click-flag": "Bekleniyor...",
     "mediarecorder/click-flag-description": "Kayda başlamak için yeşil bayrağa tıkla. Durdurmak için bu butona tıkla.",
@@ -240,5 +242,6 @@
     "swap-local-global/edit-variable-header": "Değişkeni düzenle",
     "swap-local-global/edit-variable-option": "Değişkeni yeniden adlandır veya düzenle",
     "swap-local-global/to-global": "\"Tüm kuklalar için\" ayarına dönüştür",
-    "swap-local-global/to-local": "\"Yalnızca bu kukla için” ayarına dönüştür"
+    "swap-local-global/to-local": "\"Yalnızca bu kukla için” ayarına dönüştür",
+    "hide-stage/hide-stage": "Sahneyi gizle"
 }
