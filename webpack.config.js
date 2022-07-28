@@ -1,4 +1,7 @@
 const defaultsDeep = require('lodash.defaultsdeep');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+ 
+
 var path = require('path');
 var webpack = require('webpack');
 
@@ -104,7 +107,9 @@ const base = {
             }]
         }]
     },
-    plugins: []
+    plugins: [
+        new UglifyJsPlugin()
+    ]
 };
 
 if (!process.env.CI) {

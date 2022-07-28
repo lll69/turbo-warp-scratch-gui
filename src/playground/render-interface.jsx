@@ -123,7 +123,7 @@ const Footer = () => (
                         {/* Do not translate */}
                         {'Pointer lock'}
                     </a>
-                    <a href="https://lll69.github.io/turbo-warp-scratch-gui/url.html">
+                    <a href="url.html">
                         {/* Do not translate */}
                         {'Set URL'}
                     </a>
