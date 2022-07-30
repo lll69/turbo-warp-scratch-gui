@@ -1,5 +1,5 @@
 const defaultsDeep = require('lodash.defaultsdeep');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
  
 
 var path = require('path');
@@ -107,9 +107,7 @@ const base = {
             }]
         }]
     },
-    plugins: [
-        new UglifyJsPlugin()
-    ]
+    plugins: []
 };
 
 if (!process.env.CI) {
@@ -147,7 +145,9 @@ module.exports = [
                 minChunks: 2,
                 minSize: 50000,
                 maxInitialRequests: 5
-            }
+            },
+            minimize: true,
+            minimizer: [new TerserPlugin()]
         },
         plugins: base.plugins.concat([
             new webpack.DefinePlugin({
