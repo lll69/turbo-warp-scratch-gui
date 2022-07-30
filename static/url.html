@@ -51,8 +51,6 @@
             }
             function getA() {
                 var u = localStorage.getItem("res-url");
-                if (!u)
-                    u = "$"
                 if (u) {
                     u = u.split("$");
                     a.textContent = u[0];
@@ -74,7 +72,7 @@
                 const s = `${a.textContent}71ced7c192168c7b221d16b4eaff440e.svg${b.textContent}`;
                 if (src != s)
                     imgA.src = src = s;
-                asset_url.textContent = "https://lll69.github.io/turbo-warp-scratch-gui/?res-url=" + a.textContent + "%24" + b.textContent;
+                asset_url.textContent = "https://turbo-warp-scratch-gui.vercel.app/?res-url=" + a.textContent + "%24" + b.textContent;
             }
         </script>
     </fieldset>
