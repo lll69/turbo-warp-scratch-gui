@@ -27,9 +27,9 @@ jobs:
         mv node_modules/scratch-parser node_modules/scratch-vm/node_modules/scratch-parser
     - run: npm run build
     #- run: npm run test:unit
-    - run: |
-        cp url.html build/url.html
-        cp 404.html build/404.html
+    #- run: |
+    #    cp url.html build/url.html
+    #    cp 404.html build/404.html
     - name: Download artifact
       uses: bettermarks/action-artifact-download@0.3.0
       with:
@@ -41,14 +41,14 @@ jobs:
     - run: |
         unzip pointerlock
         tar -xvf pointerlock.tar -C build
-    - name: compress
-      run: |
-        chmod 777 ./Compress.sh
-        ./Compress.sh
-    - name: script
-      run: |
-        echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
-        echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/pointerlock/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
+    #- name: compress
+    #  run: |
+    #    chmod 777 ./Compress.sh
+    #    ./Compress.sh
+    #- name: script
+    #  run: |
+    #    echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
+    #    echo -e '\ns=document.createElement("script");s.src="https://lll69.github.io/tools/track.js";s.setAttribute("defer","");s.setAttribute("async","");document.head.appendChild(s);' >> build/pointerlock/js/vendors~addon-settings~credits~editor~embed~fullscreen~player.js
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.6.0
       with:
