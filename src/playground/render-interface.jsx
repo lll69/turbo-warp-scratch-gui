@@ -144,7 +144,7 @@ const Footer = () => (
                             id="tw.footer.embed"
                         />
                     </a>
-                    <a href="https://docs.turbowarp.org/url-parameters">
+                    <a href="/url-parameters.html">
                         <FormattedMessage
                             defaultMessage="URL Parameters"
                             description="Menu bar item for URL parameters link"
