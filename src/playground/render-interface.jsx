@@ -105,7 +105,7 @@ const Footer = () => (
             </div>
             <div className={styles.footerColumns}>
                 <div className={styles.footerSection}>
-                    <a href="https://fosshost.org/">
+                    <a hidden href="https://fosshost.org/">
                         <FormattedMessage
                             defaultMessage="Hosting provided by Fosshost"
                             description="Fosshost link in footer"
@@ -119,7 +119,7 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="https://lll69.github.io/turbo-warp-scratch-gui/pointerlock/">
+                    <a href="/pointerlock/">
                         {/* Do not translate */}
                         {'Pointer lock'}
                     </a>

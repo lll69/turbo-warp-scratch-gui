@@ -1068,8 +1068,7 @@ class AddonSettingsComponent extends React.Component {
                         <a
                             href="url.html"
                             target="_blank"
-                            className={styles.feedbackButtonOuter+" "+classNames(styles.tag, styles.tagBeta)}
-                            style={{color:"white!important"}}
+                            className={styles.feedbackButtonOuter+" "+classNames(styles.tag, styles.tagTheme)}
                         >
                                 Set URL
                         </a>
