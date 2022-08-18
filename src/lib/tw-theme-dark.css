@@ -2,6 +2,7 @@
 :root {
     background: #111;
     color: #eee;
+    color-scheme: dark;
     /* see colors.csss */
     --ui-primary: rgb(17, 17, 17);
     --ui-secondary: rgb(30, 30, 30);
@@ -18,6 +19,7 @@
 /* Blockly */
 .blocklySvg {
     background-color: var(--ui-secondary) !important;
+    color-scheme: light;
 }
 [id^="blocklyGridPattern"] > line {
     stroke: #484848;
@@ -53,6 +55,9 @@
 .valueReportBox {
     color: black;
 }
+.blocklyWidgetDiv {
+    color-scheme: light;
+}
 .blocklyWidgetDiv .goog-menu {
     background: var(--ui-primary);
     border-color: var(--ui-black-transparent);
@@ -78,6 +83,10 @@
 }
 
 /* Other / Multipurpose */
+.Popover {
+    /* weird Chrome bug displays white bar above popovers with color-scheme: dark */
+    color-scheme: light;
+}
 .Popover-body {
     background: var(--ui-secondary);
     border-color: var(--ui-black-transparent);

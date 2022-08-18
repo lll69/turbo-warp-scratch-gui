@@ -24,6 +24,7 @@ import addonMessages from './addons-l10n/en.json';
 import l10nEntries from './generated/l10n-entries';
 import addonEntries from './generated/addon-entries';
 import {addContextMenu} from './contextmenu';
+import * as modal from './modal';
 import './polyfill';
 
 /* eslint-disable no-console */
@@ -208,8 +209,11 @@ const getInternalKey = element => Object.keys(element).find(key => key.startsWit
 const stylesheetContainer = document.createElement('div');
 document.body.insertBefore(stylesheetContainer, document.body.firstChild);
 const getStylesheetPrecedence = styleElement => {
+    const addonId = styleElement.dataset.addonId;
     // columns must have higher precedence than hide-flyout
-    if (styleElement.dataset.addonId === 'columns') return 1;
+    if (addonId === 'columns') return 1;
+    // editor-stage-left must have higher precedence than hide-stage
+    if (addonId === 'editor-stage-left') return 1;
     return 0;
 };
 const addStylesheet = styleElement => {
@@ -637,6 +641,18 @@ class Tab extends EventTargetShim {
 
     get direction () {
         return this.redux.state.locales.isRtl ? 'rtl' : 'ltr';
+    }
+
+    createModal (title, {isOpen = false} = {}) {
+        return modal.createEditorModal(this, title, {isOpen});
+    }
+
+    confirm (...args) {
+        return modal.confirm(this, ...args);
+    }
+
+    prompt (...args) {
+        return modal.prompt(this, ...args);
     }
 }
 

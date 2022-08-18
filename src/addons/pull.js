@@ -184,6 +184,9 @@ const normalizeManifest = (id, manifest) => {
     delete manifest.libraries;
     delete manifest.injectAsStyleElt;
 
+    // All addons have dynamic enable
+    delete manifest.dynamicEnable;
+
     const filterUserscripts = scripts => scripts
         .filter(({matches}) => matches.includes('projects') || matches.includes('https://scratch.mit.edu/projects/*'))
         .map(obj => ({
@@ -196,6 +199,10 @@ const normalizeManifest = (id, manifest) => {
     }
     if (manifest.userstyles) {
         manifest.userstyles = filterUserscripts(manifest.userstyles);
+    }
+
+    if (manifest.customCssVariables) {
+        console.warn(`Warning: ${id} has unsupported feature: customCssVariables`);
     }
 };
 
@@ -286,11 +293,6 @@ const SKIP_MESSAGES = [
     'debugger/@settings-name-log_invalid_cloud_data',
     'debugger/log-cloud-data-nan',
     'debugger/log-cloud-data-too-long',
-    'debugger/tab-threads',
-    'debugger/no-threads-running',
-    'debugger/thread',
-    'debugger/step',
-    'debugger/step-desc',
     'debugger/tab-performance',
     'debugger/performance-framerate-title',
     'debugger/performance-framerate-graph-tooltip',

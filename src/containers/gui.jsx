@@ -37,7 +37,6 @@ import vmListenerHOC from '../lib/vm-listener-hoc.jsx';
 import vmManagerHOC from '../lib/vm-manager-hoc.jsx';
 import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';
 import TWFullScreenResizerHOC from '../lib/tw-fullscreen-resizer-hoc.jsx';
-import TWRestorePointHOC from '../lib/tw-restore-point-hoc.jsx';
 
 import GUIComponent from '../components/gui/gui.jsx';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
@@ -61,7 +60,7 @@ class GUI extends React.Component {
     render () {
         if (this.props.isError) {
             throw new Error(
-                `Error in Scratch GUI [location=${window.location}]: ${this.props.error}`);
+                `Error in GUI [location=${window.location}]: ${this.props.error}`);
         }
         const {
             /* eslint-disable no-unused-vars */
@@ -191,8 +190,7 @@ const WrappedGui = compose(
     vmManagerHOC,
     SBFileUploaderHOC,
     cloudManagerHOC,
-    TWFullScreenResizerHOC,
-    TWRestorePointHOC
+    TWFullScreenResizerHOC
 )(ConnectedGUI);
 
 WrappedGui.setAppElement = ReactModal.setAppElement;

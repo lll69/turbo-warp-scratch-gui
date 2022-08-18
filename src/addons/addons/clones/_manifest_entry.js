@@ -6,9 +6,12 @@ const manifest = {
   "credits": [
     {
       "name": "Jeffalo"
+    },
+    {
+      "name": "OregSam",
+      "link": "https://scratch.mit.edu/users/simiagain/"
     }
   ],
-  "dynamicEnable": true,
   "dynamicDisable": true,
   "userscripts": [
     {
@@ -18,6 +21,15 @@ const manifest = {
   "userstyles": [
     {
       "url": "style.css"
+    }
+  ],
+  "settings": [
+    {
+      "dynamic": true,
+      "id": "showicononly",
+      "name": "Show icon only",
+      "default": false,
+      "type": "boolean"
     }
   ],
   "tags": [

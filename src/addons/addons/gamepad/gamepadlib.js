@@ -137,6 +137,8 @@ const padWithEmptyMappings = (array, length) => {
   return array;
 };
 
+const createEmptyMappingList = (length) => padWithEmptyMappings([], length);
+
 const getMovementConfiguration = (usedKeys) => ({
   usesArrows:
     usedKeys.has("ArrowUp") || usedKeys.has("ArrowDown") || usedKeys.has("ArrowRight") || usedKeys.has("ArrowLeft"),
@@ -159,6 +161,11 @@ class GamepadData {
   resetMappings() {
     this.buttonMappings = this.getDefaultButtonMappings().map(transformAndCopyMapping);
     this.axesMappings = this.getDefaultAxisMappings().map(transformAndCopyMapping);
+  }
+
+  clearMappings() {
+    this.buttonMappings = createEmptyMappingList(this.gamepad.buttons.length);
+    this.axesMappings = createEmptyMappingList(this.gamepad.axes.length);
   }
 
   getDefaultButtonMappings() {
@@ -468,6 +475,12 @@ class GamepadLib extends EventTarget {
     }
   }
 
+  clearControls() {
+    for (const gamepad of this.gamepads.values()) {
+      gamepad.clearMappings();
+    }
+  }
+
   handleConnect(e) {
     this.ensureHintsGenerated();
     for (const callback of this.connectCallbacks) {
@@ -705,7 +718,7 @@ class GamepadEditor extends EventTarget {
     this.onSelectorChange = this.onSelectorChange.bind(this);
     this.onGamepadsChange = this.onGamepadsChange.bind(this);
 
-    this.selector.onchange = this.onSelectorChange;
+    this.selector.addEventListener("change", this.onSelectorChange);
     this.gamepadLib.addEventListener("gamepadconnected", this.onGamepadsChange);
     this.gamepadLib.addEventListener("gamepaddisconnected", this.onGamepadsChange);
 
@@ -758,7 +771,11 @@ class GamepadEditor extends EventTarget {
     if (key === "ArrowLeft") return this.msg("key-left");
     if (key === "ArrowRight") return this.msg("key-right");
     if (key === "Enter") return this.msg("key-enter");
-    return key.toUpperCase();
+    if (key.length === 1) {
+      return key.toUpperCase();
+    }
+    // Convert eg. "PageUp" -> "Page Up"
+    return key.replace(/[a-z]([A-Z])/, (n) => `${n[0]} ${n[1]}`)
   }
 
   createButtonMapping(mappingList, index, { property = "high", allowClick = true } = {}) {
@@ -819,15 +836,36 @@ class GamepadEditor extends EventTarget {
       }
     };
 
-    const handleKeyDown = (e) => {
+    const handleKeyEvent = (e) => {
       if (isAcceptingInput) {
         e.preventDefault();
         const key = e.key;
-        if (["Alt", "Shift", "Control"].includes(key)) {
+        // TW: We allow binding to control and shift
+        if (["Alt"].includes(key)) {
           return;
         }
         const mapping = mappingList[index];
-        if (key.length === 1 || ["ArrowUp", "ArrowDown", "ArrowRight", "ArrowLeft", "Enter"].includes(key)) {
+        const KEYS = [
+          "ArrowUp",
+          "ArrowDown",
+          "ArrowRight",
+          "ArrowLeft",
+          "Enter",
+          // TW: We support more keys
+          // "Backspace",
+          // "Delete",
+          "Shift",
+          "CapsLock",
+          "ScrollLock",
+          "Control",
+          // "Escape",
+          "Insert",
+          "Home",
+          "End",
+          "PageUp",
+          "PageDown",
+        ];
+        if (key.length === 1 || KEYS.includes(key)) {
           mapping.type = "key";
           mapping[property] = key;
         } else if (key !== "Escape") {
@@ -839,6 +877,15 @@ class GamepadEditor extends EventTarget {
         e.preventDefault();
         e.target.click();
       }
+    };
+
+    const MODIFIER_KEYS = ["Shift", "Control"];
+    const handleKeyDown = (e) => {
+      if (!MODIFIER_KEYS.includes(e.key)) handleKeyEvent(e);
+    };
+
+    const handleKeyUp = (e) => {
+      if (MODIFIER_KEYS.includes(e.key)) handleKeyEvent(e);
     };
 
     const handleBlur = () => {
@@ -855,6 +902,7 @@ class GamepadEditor extends EventTarget {
 
     input.addEventListener("mouseup", handleClick);
     input.addEventListener("keydown", handleKeyDown);
+    input.addEventListener("keyup", handleKeyUp);
     input.addEventListener("blur", handleBlur);
     update();
 

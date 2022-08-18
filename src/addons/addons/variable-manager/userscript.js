@@ -94,16 +94,29 @@ export default async function ({ addon, global, console, msg }) {
       this.scratchVariable = scratchVariable;
       this.target = target;
       this.visible = false;
+      this.tooBig = false;
       this.buildDOM();
     }
 
     updateValue(force) {
       if (!this.visible && !force) return;
+      if (this.tooBig) return;
       let newValue;
       if (this.scratchVariable.type === "list") {
         newValue = this.scratchVariable.value.join("\n");
+        if (newValue.length > 12000000) {
+          this.tooBig = true;
+        }
       } else {
         newValue = this.scratchVariable.value;
+        if (newValue.length > 1000000) {
+          this.tooBig = true;
+        }
+      }
+      if (this.tooBig) {
+        this.input.value = "Too big to safely display. If this limit is too low, use the feedback button at the top of the screen.";
+        this.input.disabled = true;
+        return;
       }
       if (newValue !== this.input.value) {
         this.input.value = newValue;
@@ -153,13 +166,37 @@ export default async function ({ addon, global, console, msg }) {
       const onLabelOut = (e) => {
         e.preventDefault();
         const workspace = Blockly.getMainWorkspace();
-        const existingVariableWithNewName = workspace.getVariable(label.value, this.scratchVariable.type);
-        if (existingVariableWithNewName) {
+
+        let newName = label.value;
+        if (newName === this.scratchVariable.name) {
+          // If the name is unchanged before we make sure the cloud prefix exists, there's nothing to do.
+          return;
+        }
+
+        const CLOUD_SYMBOL = "☁";
+        const CLOUD_PREFIX = CLOUD_SYMBOL + " ";
+        if (this.scratchVariable.isCloud) {
+          if (newName.startsWith(CLOUD_SYMBOL)) {
+            if (!newName.startsWith(CLOUD_PREFIX)) {
+              // There isn't a space between the cloud symbol and the name, so add one.
+              newName = newName.substring(0, 1) + " " + newName.substring(1);
+            }
+          } else {
+            newName = CLOUD_PREFIX + newName;
+          }
+        }
+
+        const isEmpty = !newName.trim();
+        const nameAlreadyUsed = !!workspace.getVariable(newName, this.scratchVariable.type);
+        if (isEmpty || nameAlreadyUsed) {
           label.value = this.scratchVariable.name;
         } else {
-          workspace.renameVariableById(this.scratchVariable.id, label.value);
+          workspace.renameVariableById(this.scratchVariable.id, newName);
+          // Only update the input's value when we need to to avoid resetting undo history.
+          if (label.value !== newName) {
+            label.value = newName;
+          }
         }
-        label.blur();
       };
       label.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !e.shiftKey) e.target.blur();

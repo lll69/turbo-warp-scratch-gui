@@ -19,13 +19,14 @@ import upstreamMeta from './generated/upstream-meta.json';
 import EventTargetShim from './event-target';
 
 const SETTINGS_KEY = 'tw:addons';
-const VERSION = 2;
+const VERSION = 3;
 
 const migrateSettings = settings => {
     const oldVersion = settings._;
     if (oldVersion === VERSION || !oldVersion) {
         return settings;
     }
+
     // Migrate 1 -> 2
     // tw-project-info is now block-count
     // tw-interface-customization split into tw-remove-backpack and tw-remove-feedback
@@ -50,6 +51,17 @@ const migrateSettings = settings => {
             }
         }
     }
+
+    // Migrate 2 -> 3
+    // The default value of hide-flyout's toggle setting changed from "hover" to "cathover"
+    // We want to keep the old default value for existing users.
+    if (oldVersion < 3) {
+        const hideFlyout = settings['hide-flyout'];
+        if (hideFlyout && hideFlyout.enabled && typeof hideFlyout.toggled === 'undefined') {
+            hideFlyout.toggle = 'hover';
+        }
+    }
+
     return settings;
 };
 
@@ -190,27 +202,29 @@ class SettingsStore extends EventTargetShim {
         return result;
     }
 
-    setAddonEnabled (addonId, value) {
+    setAddonEnabled (addonId, enabled) {
         const storage = this.getAddonStorage(addonId);
         const manifest = this.getAddonManifest(addonId);
         const oldValue = this.getAddonEnabled(addonId);
-        if (value === null) {
-            value = !!manifest.enabledByDefault;
+        if (enabled === null) {
+            enabled = !!manifest.enabledByDefault;
             delete storage.enabled;
-        } else if (typeof value === 'boolean') {
-            storage.enabled = value;
+        } else if (typeof enabled === 'boolean') {
+            storage.enabled = enabled;
         } else {
             throw new Error('Enabled value is invalid.');
         }
         this.saveToLocalStorage();
-        if (value !== oldValue) {
-            const reloadRequired = value ? !manifest.dynamicEnable : !manifest.dynamicDisable;
+        if (enabled !== oldValue) {
+            // Dynamic enable is always supported.
+            // Dynamic disable requires addon support.
+            const supportsDynamic = enabled ? true : !!manifest.dynamicDisable;
             this.dispatchEvent(new CustomEvent('setting-changed', {
                 detail: {
                     addonId,
                     settingId: 'enabled',
-                    reloadRequired,
-                    value
+                    reloadRequired: !supportsDynamic,
+                    value: enabled
                 }
             }));
         }
@@ -373,7 +387,9 @@ class SettingsStore extends EventTargetShim {
             }
             if (JSON.stringify(oldSettings) !== JSON.stringify(newSettings)) {
                 const manifest = this.getAddonManifest(addonId);
-                const dynamicEnable = !!manifest.dynamicEnable && !oldSettings.enabled && newSettings.enabled;
+                // Dynamic enable is always supported.
+                const dynamicEnable = !oldSettings.enabled && newSettings.enabled;
+                // Dynamic disable requires addon support.
                 const dynamicDisable = !!manifest.dynamicDisable && oldSettings.enabled && !newSettings.enabled;
                 // Clone to avoid pass-by-reference issues
                 this.store[addonId] = JSON.parse(JSON.stringify(newSettings));

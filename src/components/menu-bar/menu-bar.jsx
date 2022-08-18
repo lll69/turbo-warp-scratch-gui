@@ -204,6 +204,7 @@ class MenuBar extends React.Component {
             'handleClickRemix',
             'handleClickSave',
             'handleClickSaveAsCopy',
+            'handleClickPackager',
             'handleClickSeeCommunity',
             'handleClickShare',
             'handleKeyPress',
@@ -244,6 +245,10 @@ class MenuBar extends React.Component {
     }
     handleClickSaveAsCopy () {
         this.props.onClickSaveAsCopy();
+        this.props.onRequestCloseFile();
+    }
+    handleClickPackager () {
+        this.props.onClickPackager();
         this.props.onRequestCloseFile();
     }
     handleClickSeeCommunity (waitForUpdate) {
@@ -349,6 +354,7 @@ class MenuBar extends React.Component {
                 <img
                     className={styles.aboutIcon}
                     src={aboutIcon}
+                    draggable={false}
                 />
                 <MenuBarMenu
                     className={classNames(styles.menuBarMenu)}
@@ -472,6 +478,7 @@ class MenuBar extends React.Component {
                                     src={themeIcon}
                                     width="24"
                                     height="24"
+                                    draggable={false}
                                 />
                             </div>
                         )}
@@ -622,6 +629,20 @@ class MenuBar extends React.Component {
                                             </React.Fragment>
                                         )}</SB3Downloader>
                                     </MenuSection>
+                                    {this.props.onClickPackager && (
+                                        <MenuSection>
+                                            <MenuItem
+                                                onClick={this.handleClickPackager}
+                                            >
+                                                <FormattedMessage
+                                                    defaultMessage="Package project"
+                                                    // eslint-disable-next-line max-len
+                                                    description="Menu bar item to open the current project in the packager"
+                                                    id="tw.menuBar.package"
+                                                />
+                                            </MenuItem>
+                                        </MenuSection>
+                                    )}
                                     <MenuSection>
                                         <TWRestorePointLoader>{(className, loadRestorePoint) => (
                                             <MenuItem
@@ -941,6 +962,7 @@ MenuBar.propTypes = {
     onClickAccount: PropTypes.func,
     onClickAddonSettings: PropTypes.func,
     onClickTheme: PropTypes.func,
+    onClickPackager: PropTypes.func,
     onClickEdit: PropTypes.func,
     onClickFile: PropTypes.func,
     onClickLanguage: PropTypes.func,

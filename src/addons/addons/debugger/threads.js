@@ -93,8 +93,15 @@ export default async function createThreadsTab({ debug, addon, console, msg }) {
       }
     }
 
+    if (row.type === "compiled") {
+      const el = document.createElement('div');
+      el.className = "sa-debugger-thread-compiled";
+      el.textContent = "Compiled threads can't be stepped and have no stack information.";
+      root.appendChild(el);
+    }
+
     if (row.targetId && row.blockId) {
-      root.appendChild(debug.createBlockLink(row.targetId, row.blockId));
+      root.appendChild(debug.createBlockLink(debug.getTargetInfoById(row.targetId), row.blockId));
     }
 
     return {
@@ -144,6 +151,10 @@ export default async function createThreadsTab({ debug, addon, console, msg }) {
             targetName: target.getName(),
             id,
           },
+          compiledItem: thread.isCompiled ? {
+            type: "compiled",
+            depth: 1,
+          } : null,
           blockCache: new WeakMap(),
         });
       }
@@ -173,9 +184,12 @@ export default async function createThreadsTab({ debug, addon, console, msg }) {
         }
 
         blockInfo.running =
-          thread === runningThread &&
-          blockId === runningThread.peekStack() &&
-          stackFrameIdx === runningThread.stackFrames.length - 1;
+          thread === runningThread && (
+            thread.isCompiled || (
+              blockId === runningThread.peekStack() &&
+              stackFrameIdx === runningThread.stackFrames.length - 1
+            )
+          );
 
         const result = [blockInfo];
         if (stackFrame && stackFrame.executionContext && stackFrame.executionContext.startedThreads) {
@@ -187,18 +201,22 @@ export default async function createThreadsTab({ debug, addon, console, msg }) {
         return result;
       };
 
-      const topBlock = thread.target.blocks.getBlock(thread.topBlock);
+      const topBlock = debug.getBlock(thread.target, thread.topBlock);
       const result = [cacheInfo.headerItem];
       if (topBlock) {
         concatInPlace(result, createBlockInfo(topBlock, 0));
         for (let i = 0; i < thread.stack.length; i++) {
           const blockId = thread.stack[i];
           if (blockId === topBlock.id) continue;
-          const block = thread.target.blocks.getBlock(blockId);
+          const block = debug.getBlock(thread.target, blockId);
           if (block) {
             concatInPlace(result, createBlockInfo(block, i));
           }
         }
+      }
+
+      if (cacheInfo.compiledItem) {
+        result.push(cacheInfo.compiledItem);
       }
 
       return result;

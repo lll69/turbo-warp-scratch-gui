@@ -7,9 +7,10 @@ const manifest = {
   "credits": [
     {
       "name": "TheColaber",
-      "link": "https://scratch.mit.edu/users/TheColaber"
+      "link": "https://scratch.mit.edu/users/TheColaber/"
     }
   ],
+  "dynamicDisable": true,
   "userscripts": [
     {
       "url": "blockcount.js"

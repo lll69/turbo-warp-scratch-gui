@@ -41,6 +41,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
         }
         componentDidUpdate () {
             // project title resetting is handled in titled-hoc.jsx
+            this.props.vm.runtime.renderer.setPrivateSkinAccess(true);
             this.props.onSetAuthor('', '');
             this.props.onSetDescription('', '');
             const projectId = this.props.projectId;
@@ -59,10 +60,8 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         this.props.onSetProjectTitle(title);
                     }
                     const authorName = data.author.username;
-                    const authorThumbnail = data.author.profile.images['32x32'];
-                    if (authorName && authorThumbnail) {
-                        this.props.onSetAuthor(authorName, authorThumbnail);
-                    }
+                    const authorThumbnail = `https://trampoline.turbowarp.org/avatars/${data.author.id}`;
+                    this.props.onSetAuthor(authorName, authorThumbnail);
                     const instructions = data.instructions || '';
                     const credits = data.description || '';
                     if (instructions || credits) {
@@ -71,6 +70,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     setIndexable(true);
                 })
                 .catch(err => {
+                    this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
                     setIndexable(false);
                     if (`${err}`.includes('unshared')) {
                         this.props.onSetDescription('unshared', 'unshared');
@@ -85,6 +85,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                 onSetAuthor,
                 onSetDescription,
                 onSetProjectTitle,
+                vm,
                 /* eslint-enable no-unused-vars */
                 ...props
             } = this.props;
@@ -99,10 +100,18 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
         projectId: PropTypes.string,
         onSetAuthor: PropTypes.func,
         onSetDescription: PropTypes.func,
-        onSetProjectTitle: PropTypes.func
+        onSetProjectTitle: PropTypes.func,
+        vm: PropTypes.shape({
+            runtime: PropTypes.shape({
+                renderer: PropTypes.shape({
+                    setPrivateSkinAccess: PropTypes.func
+                })
+            })
+        })
     };
     const mapStateToProps = state => ({
-        projectId: state.scratchGui.projectState.projectId
+        projectId: state.scratchGui.projectState.projectId,
+        vm: state.scratchGui.vm
     });
     const mapDispatchToProps = dispatch => ({
         onSetAuthor: (username, thumbnail) => dispatch(setAuthor({

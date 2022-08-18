@@ -53,6 +53,19 @@ const messages = defineMessages({
     }
 });
 
+const getFullscreenBackgroundColor = () => {
+    const params = new URLSearchParams(location.search);
+    if (params.has('fullscreen-background')) {
+        return params.get('fullscreen-background');
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return '#111';
+    }
+    return 'white';
+};
+
+const fullscreenBackgroundColor = getFullscreenBackgroundColor();
+
 const GUIComponent = props => {
     const {
         accountNavOpen,
@@ -100,6 +113,7 @@ const GUIComponent = props => {
         onCloseAccountNav,
         onClickAddonSettings,
         onClickTheme,
+        onClickPackager,
         onLogOut,
         onOpenRegistration,
         onToggleLoginOpen,
@@ -149,9 +163,16 @@ const GUIComponent = props => {
 
         return isPlayerOnly ? (
             <React.Fragment>
-                {/* tw: when window is fullscreen, put a solid white background behind the stage */}
+                {/* TW: When the window is fullscreen, use an element to display the background color */}
+                {/* The default color for transparency is inconsistent between browsers and there isn't an existing */}
+                {/* element for us to style that fills the entire screen. */}
                 {isWindowFullScreen ? (
-                    <div className={styles.fullscreenBackground} />
+                    <div
+                        className={styles.fullscreenBackground}
+                        style={{
+                            backgroundColor: fullscreenBackgroundColor
+                        }}
+                    />
                 ) : null}
                 <StageWrapper
                     isFullScreen={isFullScreen}
@@ -252,6 +273,7 @@ const GUIComponent = props => {
                     onClickAccountNav={onClickAccountNav}
                     onClickAddonSettings={onClickAddonSettings}
                     onClickTheme={onClickTheme}
+                    onClickPackager={onClickPackager}
                     onClickLogo={onClickLogo}
                     onCloseAccountNav={onCloseAccountNav}
                     onLogOut={onLogOut}
@@ -436,6 +458,7 @@ GUIComponent.propTypes = {
     onClickAccountNav: PropTypes.func,
     onClickAddonSettings: PropTypes.func,
     onClickTheme: PropTypes.func,
+    onClickPackager: PropTypes.func,
     onClickLogo: PropTypes.func,
     onCloseAccountNav: PropTypes.func,
     onExtensionButtonClick: PropTypes.func,
