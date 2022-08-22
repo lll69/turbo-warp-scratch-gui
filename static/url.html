@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Set URL</title>
     <link rel="icon" href="https://lll69.github.io/turbo-warp-scratch-gui/favicon.ico" />
+    <link rel="preload" href="/loading.gif" as="image" />
 </head>
 
 <body onbeforeunload="return status()">
@@ -70,8 +71,10 @@
             }
             function image() {
                 const s = `${a.textContent}71ced7c192168c7b221d16b4eaff440e.svg${b.textContent}`;
-                if (src != s)
+                if (src != s) {
+                    imgA.src = "/loading.gif";
                     imgA.src = src = s;
+                }
                 asset_url.textContent = "https://turbo-warp-scratch-gui.vercel.app/?res-url=" + a.textContent + "%24" + b.textContent;
             }
         </script>
