@@ -3,6 +3,9 @@
 const addons = [
     'cat-blocks',
     'editor-devtools',
+    'find-bar',
+    'middle-click-popup',
+    'jump-to-def',
     'editor-searchable-dropdowns',
     'data-category-tweaks-v2',
     'block-palette-icons',
@@ -12,6 +15,7 @@ const addons = [
     'debugger',
     'pause',
     'mute-project',
+    'vol-slider',
     'clones',
     'mouse-pos',
     'color-picker',
@@ -22,6 +26,7 @@ const addons = [
     'bitmap-copy',
     '2d-color-picker',
     'better-img-uploads',
+    'pick-colors-from-stage',
     'custom-block-shape',
     'zebra-striping',
     'editor-theme3',
@@ -51,9 +56,11 @@ const addons = [
     'move-to-top-bottom',
     'disable-paste-offset',
     'block-duplicate',
+    'rename-broadcasts',
     'swap-local-global',
     'editor-comment-previews',
     'columns',
+    'number-pad',
     'script-snap',
     'fullscreen',
     'hide-stage',
@@ -65,7 +72,9 @@ const addons = [
 ];
 
 const newAddons = [
-    'zebra-striping'
+    'vol-slider',
+    'number-pad',
+    'rename-broadcasts'
 ];
 
 // eslint-disable-next-line import/no-commonjs

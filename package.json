@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && npm install webpack-cli -D && webpack --colors --bail",
     "clean": "rimraf ./build && mkdirp build && rimraf ./dist && mkdirp dist",
-    "deploy": "touch build/.nojekyll && gh-pages -t -d build -m \"Build for $(git log --pretty=format:%H -n1) [skip ci]\"",
+    "deploy": "touch build/.nojekyll && gh-pages -t -d build -m \"[skip ci] Build for $(git log --pretty=format:%H -n1)\"",
     "prune": "./prune-gh-pages.sh",
     "i18n:push": "tx-push-src scratch-editor interface translations/en.json",
     "i18n:src": "rimraf ./translations/messages/src && babel src > tmp.js && rimraf tmp.js && build-i18n-src ./translations/messages/src ./translations/ && npm run i18n:push",
@@ -76,7 +76,11 @@
     "react-virtualized": "9.20.1",
     "redux": "3.7.2",
     "redux-throttle": "0.1.1",
-    "scratch-audio": "0.1.0-prerelease.20200528195344",
+
+
+
+
+    "scratch-audio": "git+https://github.com/TurboWarp/scratch-audio.git#develop",
 
 
 
@@ -86,7 +90,11 @@
 
 
 
-    "@turbowarp/scratch-l10n": "^3.999.20220731163341",
+
+
+
+
+    "@turbowarp/scratch-l10n": "^3.999.20221220224553",
 
 
 
