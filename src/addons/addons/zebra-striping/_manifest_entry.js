@@ -17,9 +17,7 @@ const manifest = {
       "link": "https://scratch.mit.edu/users/thecolaber"
     }
   ],
-  "tags": [
-    "new"
-  ],
+  "tags": [],
   "userscripts": [
     {
       "url": "userscript.js"
@@ -56,6 +54,22 @@ const manifest = {
       "min": 0,
       "default": 20,
       "max": 100
+    }
+  ],
+  "customCssVariables": [
+    {
+      "name": "shadeNumber",
+      "value": {
+        "type": "map",
+        "source": {
+          "type": "settingValue",
+          "settingId": "shade"
+        },
+        "options": {
+          "lighter": "1",
+          "darker": "-1"
+        }
+      }
     }
   ],
   "dynamicDisable": true

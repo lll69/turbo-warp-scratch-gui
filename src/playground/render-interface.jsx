@@ -105,13 +105,6 @@ const Footer = () => (
             </div>
             <div className={styles.footerColumns}>
                 <div className={styles.footerSection}>
-                    <a href="https://fosshost.org/">
-                        <FormattedMessage
-                            defaultMessage="Hosting provided by Fosshost"
-                            description="Fosshost link in footer"
-                            id="tw.footer.fosshost"
-                        />
-                    </a>
                     <a href="credits.html">
                         <FormattedMessage
                             defaultMessage="Credits"
@@ -267,43 +260,50 @@ class Interface extends React.Component {
                             </div>
                             {(
                                 // eslint-disable-next-line max-len
-                                projectId === '0' || description.instructions === 'unshared' || description.credits === 'unshared'
+                                description.instructions === 'unshared' || description.credits === 'unshared'
                             ) && (
                                 <div className={styles.unsharedUpdate}>
-                                    {/* I won't link these in the public website because there will be way */}
-                                    {/* too much spam if we do that, but here are the relevant links: */}
-                                    {/* https://github.com/LLK/scratch-gui/pull/8269 */}
-                                    {/* https://github.com/LLK/scratch-www/pull/6773 */}
                                     <p>
-                                        <i>{'Updated June 1, 2022'}</i>
+                                        <FormattedMessage
+                                            defaultMessage="Unshared projects are no longer visible."
+                                            description="Appears on unshared projects"
+                                            id="tw.unshared2.1"
+                                        />
                                     </p>
                                     <p>
-                                        {/* eslint-disable-next-line max-len */}
-                                        {'Unshared projects will no longer be accessible using just their project ID **at some point in the future** due to upcoming Scratch API changes.'}
+                                        <FormattedMessage
+                                            defaultMessage="For more information, visit: {link}"
+                                            description="Appears on unshared projects"
+                                            id="tw.unshared.2"
+                                            values={{
+                                                link: (
+                                                    <a
+                                                        href="https://docs.turbowarp.org/unshared-projects"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        {'https://docs.turbowarp.org/unshared-projects'}
+                                                    </a>
+                                                )
+                                            }}
+                                        />
                                     </p>
                                     <p>
-                                        {/* eslint-disable-next-line max-len */}
-                                        {'Instead, you can either share the project or save the project to your computer (File > Save to your computer) and load the file instead.'}
+                                        <FormattedMessage
+                                            // eslint-disable-next-line max-len
+                                            defaultMessage="If the project was shared recently, this message may appear incorrectly for a few minutes."
+                                            description="Appears on unshared projects"
+                                            id="tw.unshared.cache"
+                                        />
                                     </p>
                                     <p>
-                                        {'For more information, visit: '}
-                                        <a
-                                            href="https://docs.turbowarp.org/unshared-projects"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            {'https://docs.turbowarp.org/unshared-projects'}
-                                        </a>
+                                        <FormattedMessage
+                                            // eslint-disable-next-line max-len
+                                            defaultMessage="If this project is actually shared, please report a bug."
+                                            description="Appears on unshared projects"
+                                            id="tw.unshared.bug"
+                                        />
                                     </p>
-                                    {(
-                                        description.instructions === 'unshared' ||
-                                        description.credits === 'unshared'
-                                    ) && (
-                                        <p>
-                                            {/* eslint-disable-next-line max-len */}
-                                            {'If this project was recently shared, this message may incorrectly appear for up to an hour.'}
-                                        </p>
-                                    )}
                                 </div>
                             )}
                             {hasCloudVariables && projectId !== '0' && (

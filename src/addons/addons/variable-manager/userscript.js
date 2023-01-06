@@ -1,13 +1,4 @@
-/* inserted by pull.js */
-import _twAsset0 from "!url-loader!./icon.svg";
-import _twAsset1 from "!url-loader!./search.svg";
-const _twGetAsset = (path) => {
-  if (path === "/icon.svg") return _twAsset0;
-  if (path === "/search.svg") return _twAsset1;
-  throw new Error(`Unknown asset: ${path}`);
-};
-
-export default async function ({ addon, global, console, msg }) {
+export default async function ({ addon, console, msg }) {
   const vm = addon.tab.traps.vm;
 
   let localVariables = [];
@@ -60,7 +51,7 @@ export default async function ({ addon, global, console, msg }) {
 
   const varTabIcon = document.createElement("img");
   varTabIcon.draggable = false;
-  varTabIcon.src = _twGetAsset("/icon.svg");
+  varTabIcon.src = addon.self.getResource("/icon.svg") /* rewritten by pull.js */;
 
   const varTabText = document.createElement("span");
   varTabText.innerText = msg("variables");
@@ -128,7 +119,7 @@ export default async function ({ addon, global, console, msg }) {
       if (this.scratchVariable.name.toLowerCase().includes(search.toLowerCase()) || !search) {
         // fuzzy searches are lame we are too cool for fuzzy searches (& i doubt they're even the right thing to use here, this should work fine enough)
         this.row.style.display = ""; // make the row normal
-        this.updateValue(true); // force it to update because its hidden and it wouldnt be able to otherwise
+        this.updateValue(true); // force it to update because its hidden and it wouldn't be able to otherwise
       } else {
         this.row.style.display = "none"; // set the entire row as hidden
       }
@@ -186,8 +177,17 @@ export default async function ({ addon, global, console, msg }) {
           }
         }
 
+        let nameAlreadyUsed = false;
+        if (this.target.isStage) {
+          // Global variables must not conflict with any global variables or local variables in any sprite.
+          const existingNames = vm.runtime.getAllVarNamesOfType(this.scratchVariable.type);
+          nameAlreadyUsed = existingNames.includes(newName);
+        } else {
+          // Local variables must not conflict with any global variables or local variables in this sprite.
+          nameAlreadyUsed = !!workspace.getVariable(newName, this.scratchVariable.type);
+        }
+
         const isEmpty = !newName.trim();
-        const nameAlreadyUsed = !!workspace.getVariable(newName, this.scratchVariable.type);
         if (isEmpty || nameAlreadyUsed) {
           label.value = this.scratchVariable.name;
         } else {
@@ -199,7 +199,7 @@ export default async function ({ addon, global, console, msg }) {
         }
       };
       label.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) e.target.blur();
+        if (e.key === "Enter") e.target.blur();
       });
       label.addEventListener("focusout", onLabelOut);
 
@@ -245,7 +245,7 @@ export default async function ({ addon, global, console, msg }) {
       };
 
       input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) e.target.blur();
+        if (e.target.nodeName === "INPUT" && e.key === "Enter") e.target.blur();
       });
       input.addEventListener("focusout", onInputOut);
 

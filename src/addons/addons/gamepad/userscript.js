@@ -1,21 +1,6 @@
-/* inserted by pull.js */
-import _twAsset0 from "!url-loader!./active.png";
-import _twAsset1 from "!url-loader!./close.svg";
-import _twAsset2 from "!url-loader!./cursor.png";
-import _twAsset3 from "!url-loader!./dot.svg";
-import _twAsset4 from "!url-loader!./gamepad.svg";
-const _twGetAsset = (path) => {
-  if (path === "/active.png") return _twAsset0;
-  if (path === "/close.svg") return _twAsset1;
-  if (path === "/cursor.png") return _twAsset2;
-  if (path === "/dot.svg") return _twAsset3;
-  if (path === "/gamepad.svg") return _twAsset4;
-  throw new Error(`Unknown asset: ${path}`);
-};
-
 import GamepadLib from "./gamepadlib.js";
 
-export default async function ({ addon, global, console, msg }) {
+export default async function ({ addon, console, msg }) {
   const vm = addon.tab.traps.vm;
 
   // Wait for the project to finish loading. Renderer and scripts will not be fully available until this happens.
@@ -147,7 +132,7 @@ export default async function ({ addon, global, console, msg }) {
   const buttonImage = document.createElement("img");
   buttonImage.className = addon.tab.scratchClass("stage-header_stage-button-icon");
   buttonImage.draggable = false;
-  buttonImage.src = _twGetAsset("/gamepad.svg");
+  buttonImage.src = addon.self.getResource("/gamepad.svg") /* rewritten by pull.js */;
   buttonContent.appendChild(buttonImage);
   buttonContainer.appendChild(buttonContent);
   container.appendChild(buttonContainer);
@@ -318,6 +303,50 @@ export default async function ({ addon, global, console, msg }) {
     },
     { capture: true }
   );
+
+  const virtualCursorElement = document.createElement("img");
+  virtualCursorElement.hidden = true;
+  virtualCursorElement.className = "sa-gamepad-cursor";
+  virtualCursorElement.src = addon.self.getResource("/cursor.png") /* rewritten by pull.js */;
+  addon.self.addEventListener("disabled", () => {
+    virtualCursorElement.hidden = true;
+  });
+
+  let hideCursorTimeout;
+
+  const hideRealCursor = () => {
+    document.body.classList.add("sa-gamepad-hide-cursor");
+  };
+  const showRealCursor = () => {
+    document.body.classList.remove("sa-gamepad-hide-cursor");
+  };
+  const virtualCursorSetVisible = (visible) => {
+    virtualCursorElement.hidden = !visible;
+    clearTimeout(hideCursorTimeout);
+    if (visible) {
+      hideRealCursor();
+      hideCursorTimeout = setTimeout(virtualCursorHide, 8000);
+    }
+  };
+  const virtualCursorHide = () => {
+    virtualCursorSetVisible(false);
+  };
+  const virtualCursorSetDown = (down) => {
+    virtualCursorSetVisible(true);
+    virtualCursorElement.classList.toggle("sa-gamepad-cursor-down", down);
+  };
+  const virtualCursorSetPosition = (x, y) => {
+    virtualCursorSetVisible(true);
+    const CURSOR_SIZE = 6;
+    const stageX = width / 2 + x - CURSOR_SIZE / 2;
+    const stageY = height / 2 - y - CURSOR_SIZE / 2;
+    virtualCursorElement.style.transform = `translate(${stageX}px, ${stageY}px)`;
+  };
+
+  document.addEventListener("mousemove", () => {
+    virtualCursorSetVisible(false);
+    showRealCursor();
+  });
 
   let getCanvasSize;
   // Support modern ResizeObserver and slow getBoundingClientRect version for improved browser support (matters for TurboWarp)
