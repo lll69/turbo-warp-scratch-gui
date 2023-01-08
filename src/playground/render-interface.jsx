@@ -112,7 +112,7 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="/pointerlock/">
+                    <a href="pointerlock/">
                         {/* Do not translate */}
                         {'Pointer lock'}
                     </a>

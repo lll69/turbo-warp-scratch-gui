@@ -747,6 +747,7 @@ const extraTurboWarpBlocks = `
 <block type="argument_reporter_boolean"><field name="VALUE">is TurboWarp?</field></block>
 <block type="argument_reporter_string_number"><field name="VALUE">last key pressed</field></block>
 <block type="argument_reporter_string_number"><field name="VALUE">current cursor</field></block>
+<block type="looks_setstretchto"><value name="STRETCH"><shadow type="text"><field name="TEXT">none</field></shadow></value></block>
 `;
 /* eslint-enable no-unused-vars */
 
