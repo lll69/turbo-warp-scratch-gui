@@ -34,7 +34,11 @@ class LibraryItem extends React.PureComponent {
     }
     handleClick(e) {
         if (!this.props.disabled) {
-            this.props.onSelect(this.props.id);
+            if (this.props.href) {
+                window.open(this.props.href);
+            } else {
+                this.props.onSelect(this.props.id);
+            }
         }
         e.preventDefault();
     }
@@ -137,6 +141,7 @@ class LibraryItem extends React.PureComponent {
                 iconURL={iconURL}
                 icons={this.props.icons}
                 id={this.props.id}
+                incompatibleWithScratch={this.props.incompatibleWithScratch}
                 insetIconURL={this.props.insetIconURL}
                 internetConnectionRequired={this.props.internetConnectionRequired}
                 isPlaying={this.props.isPlaying}
@@ -166,6 +171,7 @@ LibraryItem.propTypes = {
     extensionId: PropTypes.string,
     featured: PropTypes.bool,
     hidden: PropTypes.bool,
+    href: PropTypes.string,
     iconMd5: PropTypes.string,
     iconRawURL: PropTypes.string,
     icons: PropTypes.arrayOf(
@@ -175,6 +181,7 @@ LibraryItem.propTypes = {
         })
     ),
     id: PropTypes.number.isRequired,
+    incompatibleWithScratch: PropTypes.bool,
     insetIconURL: PropTypes.string,
     internetConnectionRequired: PropTypes.bool,
     isPlaying: PropTypes.bool,
