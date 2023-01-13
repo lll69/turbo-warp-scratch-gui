@@ -147,7 +147,16 @@ module.exports = [
                 maxInitialRequests: 5
             },
             minimize: true,
-            minimizer: [new TerserPlugin()]
+            minimizer: [new TerserPlugin({
+                extractComments: false,
+                terserOptions: {
+                    compress: {},
+                    mangle: {},
+                    format: {
+                        comments: false
+                    }
+                }
+            })]
         },
         plugins: base.plugins.concat([
             new webpack.DefinePlugin({
