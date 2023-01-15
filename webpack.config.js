@@ -148,10 +148,12 @@ module.exports = [
             },
             minimize: true,
             minimizer: [new TerserPlugin({
-                extractComments: false,
+                extractComments: true,
                 terserOptions: {
-                    compress: {},
-                    mangle: {},
+                    compress: {
+                        arguments: true
+                    },
+                    mangle: true,
                     format: {
                         comments: false
                     }
