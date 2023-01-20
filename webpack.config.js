@@ -151,7 +151,8 @@ module.exports = [
                 extractComments: true,
                 terserOptions: {
                     compress: {
-                        arguments: true
+                        arguments: true,
+                        passes: 3
                     },
                     mangle: true,
                     format: {
