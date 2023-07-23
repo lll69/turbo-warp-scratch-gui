@@ -106,7 +106,7 @@ const groupAddons = () => {
         },
         danger: {
             label: settingsTranslations.groupDanger,
-            open: false,
+            open: true,
             addons: []
         }
     };
@@ -226,11 +226,11 @@ const Tags = ({manifest}) => (
                 {settingsTranslations.tagNew}
             </span>
         )}
-        {manifest.tags.includes('danger') && (
+        {/*manifest.tags.includes('danger') && (
             <span className={classNames(styles.tag, styles.tagDanger)}>
                 {settingsTranslations.tagDanger}
             </span>
-        )}
+        )*/}
     </span>
 );
 Tags.propTypes = {
@@ -1055,6 +1055,13 @@ class AddonSettingsComponent extends React.Component {
                             />
                         </div>
 
+                        <a
+                            href="url.html"
+                            target="_blank"
+                            className={styles.feedbackButtonOuter+" "+classNames(styles.tag, styles.tagTheme)}
+                        >
+                            Set URL
+                        </a>
                        
                         <a
                             href="https://scratch.mit.edu/users/GarboMuffin/#comments"
@@ -1065,13 +1072,6 @@ class AddonSettingsComponent extends React.Component {
                             <span className={styles.feedbackButtonInner}>
                                 {settingsTranslations.addonFeedback}
                             </span>
-                        </a>
-                        <a
-                            href="url.html"
-                            target="_blank"
-                            className={styles.feedbackButtonOuter+" "+classNames(styles.tag, styles.tagTheme)}
-                        >
-                                Set URL
                         </a>
                     </div>
                     {this.state.dirty && (
