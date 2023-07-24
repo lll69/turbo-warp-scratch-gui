@@ -106,6 +106,18 @@ class Monitor extends React.Component {
     componentWillUnmount () {
         this.props.removeMonitorRect(this.props.id);
     }
+    handleCopy () {
+        var a = document.createElement("input");
+        a.value = this.props.value;
+        a.style.position = "absolute";
+        a.style.opacity = "0";
+        a.style.zIndex = "-2147483647";
+        document.body.appendChild(a);
+        a.focus();
+        a.select();
+        document.execCommand("copy");
+        document.removeChild(a);
+    }
     handleDragEnd (e, {x, y}) {
         const newX = parseInt(this.element.style.left, 10) + x;
         const newY = parseInt(this.element.style.top, 10) + y;
@@ -223,6 +235,7 @@ class Monitor extends React.Component {
                     mode={this.props.mode}
                     targetId={this.props.targetId}
                     width={this.props.width}
+                    onCopy={this.handleCopy}
                     onDragEnd={this.handleDragEnd}
                     onExport={isList ? this.handleExport : null}
                     onImport={isList ? this.handleImport : null}

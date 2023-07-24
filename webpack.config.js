@@ -143,7 +143,7 @@ module.exports = [
             splitChunks: {
                 chunks: 'all',
                 minChunks: 2,
-                minSize: 50000,
+                minSize: 100000,
                 maxInitialRequests: 5
             },
             minimize: true,
@@ -152,7 +152,7 @@ module.exports = [
                 terserOptions: {
                     compress: {
                         arguments: true,
-                        passes: 3
+                        passes: 64
                     },
                     mangle: true,
                     format: {

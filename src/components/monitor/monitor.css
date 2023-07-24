@@ -49,6 +49,7 @@
     padding: 0 2px;
     white-space: pre-wrap;
     transform: translateZ(0); /* Fixes flickering in Safari */
+    user-select: text; /* Allow selecting values */
 }
 
 .large-value {

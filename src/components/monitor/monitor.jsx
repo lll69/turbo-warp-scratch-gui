@@ -117,6 +117,14 @@ const MonitorComponent = props => (
                             id="gui.monitor.contextMenu.hide"
                         />
                     </BorderedMenuItem>}
+                {props.mode !== 'list' && props.onCopy &&
+                    <MenuItem onClick={props.onCopy}>
+                        <FormattedMessage
+                            defaultMessage="Copy value"
+                            description="Menu item to copy the monitor value"
+                            id="gui.monitor.contextMenu.copy"
+                        />
+                    </MenuItem>}
             </ContextMenu>
         ), document.body)}
     </ContextMenuTrigger>
@@ -133,6 +141,7 @@ MonitorComponent.propTypes = {
     draggable: PropTypes.bool.isRequired,
     label: PropTypes.string.isRequired,
     mode: PropTypes.oneOf(monitorModes),
+    onCopy: PropTypes.func,
     onDragEnd: PropTypes.func.isRequired,
     onExport: PropTypes.func,
     onImport: PropTypes.func,
