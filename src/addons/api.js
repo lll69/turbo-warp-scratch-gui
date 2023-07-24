@@ -158,10 +158,15 @@ const getEditorMode = () => {
 };
 
 const tabReduxInstance = new Redux();
-const language = tabReduxInstance.state.locales.locale.split('-')[0];
+const lang = tabReduxInstance.state.locales.locale;
+var language = lang.split('-')[0];
 
 const getTranslations = async () => {
-    if (l10nEntries[language]) {
+    if (l10nEntries[lang]) {
+        language = lang;
+        const localeMessages = await l10nEntries[lang]();
+        Object.assign(addonMessages, localeMessages);
+    } else if (l10nEntries[language]) {
         const localeMessages = await l10nEntries[language]();
         Object.assign(addonMessages, localeMessages);
     }
