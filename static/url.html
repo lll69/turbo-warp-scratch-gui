@@ -45,10 +45,10 @@
             var imgA = document.querySelector("#imgA");
             var loading = document.querySelector("#loading");
             function press() {
-                a.textContent = a.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
-                b.textContent = b.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
-                aa.textContent = aa.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
-                bb.textContent = bb.textContent.replaceAll("\n", "").replaceAll("\r", "").replaceAll("$", "");
+                a.textContent = a.textContent.replace(/\n/g, "").replace(/\r/g, "").replace(/\$/g, "");
+                b.textContent = b.textContent.replace(/\n/g, "").replace(/\r/g, "").replace(/\$/g, "");
+                aa.textContent = aa.textContent.replace(/\n/g, "").replace(/\r/g, "").replace(/\$/g, "");
+                bb.textContent = bb.textContent.replace(/\n/g, "").replace(/\r/g, "").replace(/\$/g, "");
             }
             function setA() {
                 press();
