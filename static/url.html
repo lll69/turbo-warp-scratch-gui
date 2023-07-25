@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Set URL</title>
     <link rel="icon" href="https://lll69.github.io/turbo-warp-scratch-gui/favicon.ico" />
-    <link rel="preload" href="/loading.gif" as="image" />
+    <link rel="preload" href="loading.gif" as="image" />
 </head>
 
 <body onbeforeunload="return status()">
@@ -24,7 +24,7 @@
     <fieldset>
         <legend>
             Asset URL
-            <img id="loading" height="30" src="/loading.gif" hidden />
+            <img id="loading" height="30" src="loading.gif" hidden />
             <img id="imgA" referrerpolicy="no-referrer" height="30"
                 onload="this.hidden=false;window.loading.hidden=true"
                 onerror="if(!this.src.endsWith('static/assets/76b6cb627b95d79705c0b41664064f0e.svg'))this.src='static/assets/76b6cb627b95d79705c0b41664064f0e.svg';this.hidden=false;window.loading.hidden=true" />
@@ -81,7 +81,7 @@
                     imgA.hidden = true;
                     imgA.src = src = s;
                 }
-                asset_url.textContent = "https://turbo-warp-scratch-gui.vercel.app/?res-url=" + encodeURIComponent(a.textContent + "$" + b.textContent);
+                asset_url.textContent = new URL(".", location.href).href + "?res-url=" + encodeURIComponent(a.textContent + "$" + b.textContent);
             }
         </script>
     </fieldset>
