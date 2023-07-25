@@ -1,0 +1,3 @@
+/*! For license information please see addon-entry-tw-disable-compiler.js.LICENSE */
+(window.webpackJsonpGUI=window.webpackJsonpGUI||[]).push([["addon-entry-tw-disable-compiler"],{"./src/addons/addons/tw-disable-compiler/_runtime_entry.js":function(s,e,n){"use strict";n.r(e),n.d(e,"resources",(function(){return t}));const t={"userscript.js":n("./src/addons/addons/tw-disable-compiler/userscript.js").default}},"./src/addons/addons/tw-disable-compiler/userscript.js":function(s,e,n){"use strict";n.r(e),e.default=async function(s){let{addon:e}=s;e.tab.traps.vm.setCompilerOptions({enabled:!1})}}}]);
+//# sourceMappingURL=addon-entry-tw-disable-compiler.js.map

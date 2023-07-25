@@ -1,0 +1,863 @@
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/tw-cloud-variable-badge/cloud-variable-badge.css ***!
+  \********************************************************************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../node_modules/css-loader/lib/css-base.js */
+
+/*!**************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/tw-description/description.css ***!
+  \**************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/tw-featured-projects/featured-projects.css ***!
+  \**************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/tw-project-input/project-input.css ***!
+  \******************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/components/tw-studioview/studioview.css ***!
+  \************************************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/playground/interface.css ***!
+  \*********************************************************************************************************************/
+
+/*! ../../node_modules/css-loader/lib/css-base.js */
+
+/*!********************************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=sw.js!./src/playground/service-worker.js ***!
+  \********************************************************************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_Symbol.js ***!
+  \****************************************/
+
+/*! ./_root */
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_arrayMap.js ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_arrayPush.js ***!
+  \*******************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseFlatten.js ***!
+  \*********************************************/
+
+/*! ./_arrayPush */
+
+/*! ./_isFlattenable */
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseGetTag.js ***!
+  \********************************************/
+
+/*! ./_Symbol */
+
+/*! ./_getRawTag */
+
+/*! ./_objectToString */
+
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseIsArguments.js ***!
+  \*************************************************/
+
+/*! ./_baseGetTag */
+
+/*! ./isObjectLike */
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseIsRegExp.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseToString.js ***!
+  \**********************************************/
+
+/*! ./_arrayMap */
+
+/*! ./isArray */
+
+/*! ./isSymbol */
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseUnary.js ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_freeGlobal.js ***!
+  \********************************************/
+
+/*! ./../webpack/buildin/global.js */
+
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getRawTag.js ***!
+  \*******************************************/
+
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_isFlattenable.js ***!
+  \***********************************************/
+
+/*! ./isArguments */
+
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_nodeUtil.js ***!
+  \******************************************/
+
+/*! ./_freeGlobal */
+
+/*! ./../webpack/buildin/module.js */
+
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_objectToString.js ***!
+  \************************************************/
+
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_root.js ***!
+  \**************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/escapeRegExp.js ***!
+  \*********************************************/
+
+/*! ./toString */
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/flatten.js ***!
+  \****************************************/
+
+/*! ./_baseFlatten */
+
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isArguments.js ***!
+  \********************************************/
+
+/*! ./_baseIsArguments */
+
+/*!****************************************!*\
+  !*** ./node_modules/lodash/isArray.js ***!
+  \****************************************/
+
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isObjectLike.js ***!
+  \*********************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isRegExp.js ***!
+  \*****************************************/
+
+/*! ./_baseIsRegExp */
+
+/*! ./_baseUnary */
+
+/*! ./_nodeUtil */
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isString.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isSymbol.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toString.js ***!
+  \*****************************************/
+
+/*! ./_baseToString */
+
+/*!*************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/lib/tw-theme-dark.css ***!
+  \*************************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/react-string-replace/index.js ***!
+  \****************************************************/
+
+/*! lodash/isRegExp */
+
+/*! lodash/escapeRegExp */
+
+/*! lodash/isString */
+
+/*! lodash/flatten */
+
+/*!**************************************************************!*\
+  !*** ./src/addons/addons/2d-color-picker/_manifest_entry.js ***!
+  \**************************************************************/
+
+/*! exports provided: default */
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/better-img-uploads/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/addons/addons/bitmap-copy/_manifest_entry.js ***!
+  \**********************************************************/
+
+/*! ../../environment */
+
+/*!*******************************************************************!*\
+  !*** ./src/addons/addons/block-cherry-picking/_manifest_entry.js ***!
+  \*******************************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/addons/addons/block-count/_manifest_entry.js ***!
+  \**********************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/addons/addons/block-duplicate/_manifest_entry.js ***!
+  \**************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/addons/addons/block-palette-icons/_manifest_entry.js ***!
+  \******************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/addons/addons/block-switching/_manifest_entry.js ***!
+  \**************************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/addons/addons/blocks2image/_manifest_entry.js ***!
+  \***********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/cat-blocks/_manifest_entry.js ***!
+  \*********************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/addons/addons/clones/_manifest_entry.js ***!
+  \*****************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/addons/addons/color-picker/_manifest_entry.js ***!
+  \***********************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/addons/addons/columns/_manifest_entry.js ***!
+  \******************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/custom-block-shape/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/custom-block-text/_manifest_entry.js ***!
+  \****************************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/addons/addons/custom-zoom/_manifest_entry.js ***!
+  \**********************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./src/addons/addons/data-category-tweaks-v2/_manifest_entry.js ***!
+  \**********************************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/addons/addons/debugger/_manifest_entry.js ***!
+  \*******************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./src/addons/addons/default-costume-editor-color/_manifest_entry.js ***!
+  \***************************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/addons/addons/disable-paste-offset/_manifest_entry.js ***!
+  \*******************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./src/addons/addons/disable-stage-drag-select/_manifest_entry.js ***!
+  \************************************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/addons/addons/drag-drop/_manifest_entry.js ***!
+  \********************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./src/addons/addons/editor-buttons-reverse-order/_manifest_entry.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ./src/addons/addons/editor-colored-context-menus/_manifest_entry.js ***!
+  \***************************************************************************/
+
+/*!**********************************************************************!*\
+  !*** ./src/addons/addons/editor-comment-previews/_manifest_entry.js ***!
+  \**********************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/addons/addons/editor-devtools/_manifest_entry.js ***!
+  \**************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/editor-extra-keys/_manifest_entry.js ***!
+  \****************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ./src/addons/addons/editor-searchable-dropdowns/_manifest_entry.js ***!
+  \**************************************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/addons/addons/editor-sounds/_manifest_entry.js ***!
+  \************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/editor-stage-left/_manifest_entry.js ***!
+  \****************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/addons/addons/editor-stepping/_manifest_entry.js ***!
+  \**************************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/addons/addons/editor-theme3/_manifest_entry.js ***!
+  \************************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/addons/addons/find-bar/_manifest_entry.js ***!
+  \*******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/addons/addons/folders/_manifest_entry.js ***!
+  \******************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/fullscreen/_manifest_entry.js ***!
+  \*********************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/addons/addons/gamepad/_manifest_entry.js ***!
+  \******************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/hide-delete-button/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/addons/addons/hide-flyout/_manifest_entry.js ***!
+  \**********************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/hide-new-variables/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/hide-stage/_manifest_entry.js ***!
+  \*********************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./src/addons/addons/initialise-sprite-position/_manifest_entry.js ***!
+  \*************************************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/addons/addons/jump-to-def/_manifest_entry.js ***!
+  \**********************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/addons/addons/load-extensions/_manifest_entry.js ***!
+  \**************************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/addons/addons/mediarecorder/_manifest_entry.js ***!
+  \************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/middle-click-popup/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/addons/addons/mouse-pos/_manifest_entry.js ***!
+  \********************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/move-to-top-bottom/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!***********************************************************!*\
+  !*** ./src/addons/addons/mute-project/_manifest_entry.js ***!
+  \***********************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/no-script-bumping/_manifest_entry.js ***!
+  \****************************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/number-pad/_manifest_entry.js ***!
+  \*********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/addons/addons/onion-skinning/_manifest_entry.js ***!
+  \*************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/addons/addons/paint-by-default/_manifest_entry.js ***!
+  \***************************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/paint-snap/_manifest_entry.js ***!
+  \*********************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/addons/addons/pause/_manifest_entry.js ***!
+  \****************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/addons/addons/pick-colors-from-stage/_manifest_entry.js ***!
+  \*********************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./src/addons/addons/remove-curved-stage-border/_manifest_entry.js ***!
+  \*************************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./src/addons/addons/remove-sprite-confirm/_manifest_entry.js ***!
+  \********************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/rename-broadcasts/_manifest_entry.js ***!
+  \****************************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/addons/addons/script-snap/_manifest_entry.js ***!
+  \**********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/addons/addons/search-sprites/_manifest_entry.js ***!
+  \*************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/sprite-properties/_manifest_entry.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/swap-local-global/_manifest_entry.js ***!
+  \****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/addons/addons/transparent-orphans/_manifest_entry.js ***!
+  \******************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./src/addons/addons/tw-disable-cloud-variables/_manifest_entry.js ***!
+  \*************************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/addons/addons/tw-disable-compiler/_manifest_entry.js ***!
+  \******************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/tw-remove-backpack/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/tw-remove-feedback/_manifest_entry.js ***!
+  \*****************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/addons/addons/tw-straighten-comments/_manifest_entry.js ***!
+  \*********************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/addons/addons/variable-manager/_manifest_entry.js ***!
+  \***************************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/vol-slider/_manifest_entry.js ***!
+  \*********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/addons/addons/zebra-striping/_manifest_entry.js ***!
+  \*************************************************************/
+
+/*!********************************!*\
+  !*** ./src/addons/channels.js ***!
+  \********************************/
+
+/*!***********************************!*\
+  !*** ./src/addons/environment.js ***!
+  \***********************************/
+
+/*! exports provided: isMobile, clipboardSupported, mediaRecorderSupported */
+
+/*!************************************!*\
+  !*** ./src/addons/event-target.js ***!
+  \************************************/
+
+/*!*************************************************!*\
+  !*** ./src/addons/generated/addon-manifests.js ***!
+  \*************************************************/
+
+/*! ../addons/cat-blocks/_manifest_entry.js */
+
+/*! ../addons/editor-devtools/_manifest_entry.js */
+
+/*! ../addons/find-bar/_manifest_entry.js */
+
+/*! ../addons/middle-click-popup/_manifest_entry.js */
+
+/*! ../addons/jump-to-def/_manifest_entry.js */
+
+/*! ../addons/editor-searchable-dropdowns/_manifest_entry.js */
+
+/*! ../addons/data-category-tweaks-v2/_manifest_entry.js */
+
+/*! ../addons/block-palette-icons/_manifest_entry.js */
+
+/*! ../addons/hide-flyout/_manifest_entry.js */
+
+/*! ../addons/mediarecorder/_manifest_entry.js */
+
+/*! ../addons/drag-drop/_manifest_entry.js */
+
+/*! ../addons/debugger/_manifest_entry.js */
+
+/*! ../addons/pause/_manifest_entry.js */
+
+/*! ../addons/mute-project/_manifest_entry.js */
+
+/*! ../addons/vol-slider/_manifest_entry.js */
+
+/*! ../addons/clones/_manifest_entry.js */
+
+/*! ../addons/mouse-pos/_manifest_entry.js */
+
+/*! ../addons/color-picker/_manifest_entry.js */
+
+/*! ../addons/remove-sprite-confirm/_manifest_entry.js */
+
+/*! ../addons/block-count/_manifest_entry.js */
+
+/*! ../addons/onion-skinning/_manifest_entry.js */
+
+/*! ../addons/paint-snap/_manifest_entry.js */
+
+/*! ../addons/default-costume-editor-color/_manifest_entry.js */
+
+/*! ../addons/bitmap-copy/_manifest_entry.js */
+
+/*! ../addons/2d-color-picker/_manifest_entry.js */
+
+/*! ../addons/better-img-uploads/_manifest_entry.js */
+
+/*! ../addons/pick-colors-from-stage/_manifest_entry.js */
+
+/*! ../addons/custom-block-shape/_manifest_entry.js */
+
+/*! ../addons/zebra-striping/_manifest_entry.js */
+
+/*! ../addons/editor-theme3/_manifest_entry.js */
+
+/*! ../addons/custom-block-text/_manifest_entry.js */
+
+/*! ../addons/editor-colored-context-menus/_manifest_entry.js */
+
+/*! ../addons/editor-stage-left/_manifest_entry.js */
+
+/*! ../addons/editor-buttons-reverse-order/_manifest_entry.js */
+
+/*! ../addons/variable-manager/_manifest_entry.js */
+
+/*! ../addons/search-sprites/_manifest_entry.js */
+
+/*! ../addons/sprite-properties/_manifest_entry.js */
+
+/*! ../addons/gamepad/_manifest_entry.js */
+
+/*! ../addons/editor-sounds/_manifest_entry.js */
+
+/*! ../addons/folders/_manifest_entry.js */
+
+/*! ../addons/block-switching/_manifest_entry.js */
+
+/*! ../addons/load-extensions/_manifest_entry.js */
+
+/*! ../addons/custom-zoom/_manifest_entry.js */
+
+/*! ../addons/initialise-sprite-position/_manifest_entry.js */
+
+/*! ../addons/blocks2image/_manifest_entry.js */
+
+/*! ../addons/remove-curved-stage-border/_manifest_entry.js */
+
+/*! ../addons/transparent-orphans/_manifest_entry.js */
+
+/*! ../addons/paint-by-default/_manifest_entry.js */
+
+/*! ../addons/block-cherry-picking/_manifest_entry.js */
+
+/*! ../addons/hide-new-variables/_manifest_entry.js */
+
+/*! ../addons/editor-extra-keys/_manifest_entry.js */
+
+/*! ../addons/hide-delete-button/_manifest_entry.js */
+
+/*! ../addons/no-script-bumping/_manifest_entry.js */
+
+/*! ../addons/disable-stage-drag-select/_manifest_entry.js */
+
+/*! ../addons/move-to-top-bottom/_manifest_entry.js */
+
+/*! ../addons/disable-paste-offset/_manifest_entry.js */
+
+/*! ../addons/block-duplicate/_manifest_entry.js */
+
+/*! ../addons/rename-broadcasts/_manifest_entry.js */
+
+/*! ../addons/swap-local-global/_manifest_entry.js */
+
+/*! ../addons/editor-comment-previews/_manifest_entry.js */
+
+/*! ../addons/columns/_manifest_entry.js */
+
+/*! ../addons/number-pad/_manifest_entry.js */
+
+/*! ../addons/script-snap/_manifest_entry.js */
+
+/*! ../addons/fullscreen/_manifest_entry.js */
+
+/*! ../addons/hide-stage/_manifest_entry.js */
+
+/*! ../addons/tw-straighten-comments/_manifest_entry.js */
+
+/*! ../addons/tw-remove-backpack/_manifest_entry.js */
+
+/*! ../addons/tw-remove-feedback/_manifest_entry.js */
+
+/*! ../addons/tw-disable-cloud-variables/_manifest_entry.js */
+
+/*! ../addons/tw-disable-compiler/_manifest_entry.js */
+
+/*! ../addons/editor-stepping/_manifest_entry.js */
+
+/*!*************************************************!*\
+  !*** ./src/addons/generated/upstream-meta.json ***!
+  \*************************************************/
+
+/*! exports provided: commit, default */
+
+/*!************************************************!*\
+  !*** ./src/addons/settings-store-singleton.js ***!
+  \************************************************/
+
+/*! ./settings-store */
+
+/*!**************************************!*\
+  !*** ./src/addons/settings-store.js ***!
+  \**************************************/
+
+/*! ./generated/addon-manifests */
+
+/*! ./generated/upstream-meta.json */
+
+/*! ./event-target */
+
+/*!*************************************************************************!*\
+  !*** ./src/components/tw-cloud-variable-badge/cloud-variable-badge.css ***!
+  \*************************************************************************/
+
+/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./cloud-variable-badge.css */
+
+/*! ../../../node_modules/style-loader/lib/addStyles.js */
+
+/*!*************************************************************************!*\
+  !*** ./src/components/tw-cloud-variable-badge/cloud-variable-badge.jsx ***!
+  \*************************************************************************/
+
+/*! react */
+
+/*! react-intl */
+
+/*! ./clouddata.svg */
+
+/*! ./cloud-variable-badge.css */
+
+/*!**************************************************************!*\
+  !*** ./src/components/tw-cloud-variable-badge/clouddata.svg ***!
+  \**************************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/components/tw-description/description.css ***!
+  \*******************************************************/
+
+/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./description.css */
+
+/*!*******************************************************!*\
+  !*** ./src/components/tw-description/description.jsx ***!
+  \*******************************************************/
+
+/*! prop-types */
+
+/*! ./description.css */
+
+/*! react-string-replace */
+
+/*!*******************************************************************!*\
+  !*** ./src/components/tw-featured-projects/featured-projects.css ***!
+  \*******************************************************************/
+
+/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./featured-projects.css */
+
+/*!*******************************************************************!*\
+  !*** ./src/components/tw-featured-projects/featured-projects.jsx ***!
+  \*******************************************************************/
+
+/*! lodash.bindall */
+
+/*! react-redux */
+
+/*! ../tw-studioview/studioview.jsx */
+
+/*! ./featured-projects.css */
+
+/*! ../../lib/tw-navigation-utils.js */
+
+/*! classnames */
+
+/*!***********************************************************!*\
+  !*** ./src/components/tw-project-input/project-input.css ***!
+  \***********************************************************/
+
+/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./project-input.css */
+
+/*!***********************************************************!*\
+  !*** ./src/components/tw-project-input/project-input.jsx ***!
+  \***********************************************************/
+
+/*! react-tooltip */
+
+/*! ../../reducers/project-state */
+
+/*! ./project-input.css */
+
+/*! ../../lib/tw-navigation-utils */
+
+/*!*****************************************************!*\
+  !*** ./src/components/tw-studioview/studioview.css ***!
+  \*****************************************************/
+
+/*! !../../../node_modules/css-loader??ref--5-1!../../../node_modules/postcss-loader/src??postcss!./studioview.css */
+
+/*!****************************************************!*\
+  !*** ./src/components/tw-studioview/studioview.js ***!
+  \****************************************************/
+
+/*! ./studioview.css */
+
+/*!*****************************************************!*\
+  !*** ./src/components/tw-studioview/studioview.jsx ***!
+  \*****************************************************/
+
+/*! ./studioview */
+
+/*!***************************************!*\
+  !*** ./src/lib/tw-fix-history-api.js ***!
+  \***************************************/
+
+/*! no exports provided */
+
+/*! ./log */
+
+/*!*************************************************!*\
+  !*** ./src/lib/tw-packager-integration-hoc.jsx ***!
+  \*************************************************/
+
+/*! ../reducers/project-state */
+
+/*!******************************************!*\
+  !*** ./src/lib/tw-restore-point-hoc.jsx ***!
+  \******************************************/
+
+/*! ../reducers/alerts */
+
+/*! scratch-vm */
+
+/*! ./tw-restore-point-api */
+
+/*!**********************************!*\
+  !*** ./src/lib/tw-theme-hoc.jsx ***!
+  \**********************************/
+
+/*! exports provided: getInitialDarkMode, default */
+
+/*! raw-loader!./tw-theme-dark.css */
+
+/*!**************************************!*\
+  !*** ./src/playground/interface.css ***!
+  \**************************************/
+
+/*! !../../node_modules/css-loader??ref--5-1!../../node_modules/postcss-loader/src??postcss!./interface.css */
+
+/*! ../../node_modules/style-loader/lib/addStyles.js */
+
+/*!***********************************************!*\
+  !*** ./src/playground/load-service-worker.js ***!
+  \***********************************************/
+
+/*! exports provided: loadServiceWorker */
+
+/*! ../lib/log */
+
+/*! !file-loader?name=sw.js!./service-worker.js */
+
+/*!*********************************************!*\
+  !*** ./src/playground/render-interface.jsx ***!
+  \*********************************************/
+
+/*! redux */
+
+/*! ../reducers/project-state.js */
+
+/*! ../containers/dom-element-renderer.jsx */
+
+/*! ../lib/app-state-hoc.jsx */
+
+/*! ../lib/error-boundary-hoc.jsx */
+
+/*! ../lib/tw-project-meta-fetcher-hoc.jsx */
+
+/*! ../lib/tw-state-manager-hoc.jsx */
+
+/*! ../lib/tw-theme-hoc.jsx */
+
+/*! ../lib/sb-file-uploader-hoc.jsx */
+
+/*! ../lib/tw-packager-integration-hoc.jsx */
+
+/*! ../lib/tw-restore-point-hoc.jsx */
+
+/*! ../addons/settings-store-singleton */
+
+/*! ../lib/tw-fix-history-api */
+
+/*! ./render-gui.jsx */
+
+/*! ../components/menu-bar/menu-bar.jsx */
+
+/*! ../components/tw-project-input/project-input.jsx */
+
+/*! ../components/tw-featured-projects/featured-projects.jsx */
+
+/*! ../components/tw-description/description.jsx */
+
+/*! ../containers/webgl-modal.jsx */
+
+/*! ../components/browser-modal/browser-modal.jsx */
+
+/*! ../components/tw-cloud-variable-badge/cloud-variable-badge.jsx */
+
+/*! ../lib/tw-environment-support-prober */
+
+/*! ../addons/channels */
+
+/*! ./load-service-worker */
+
+/*! ../addons/entry */
+
+/*! ./interface.css */

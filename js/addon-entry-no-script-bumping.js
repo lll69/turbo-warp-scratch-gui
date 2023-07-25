@@ -1,0 +1,3 @@
+/*! For license information please see addon-entry-no-script-bumping.js.LICENSE */
+(window.webpackJsonpGUI=window.webpackJsonpGUI||[]).push([["addon-entry-no-script-bumping"],{"./src/addons/addons/no-script-bumping/_runtime_entry.js":function(s,n,o){"use strict";o.r(n),o.d(n,"resources",(function(){return t}));const t={"userscript.js":o("./src/addons/addons/no-script-bumping/userscript.js").default}},"./src/addons/addons/no-script-bumping/userscript.js":function(s,n,o){"use strict";o.r(n),n.default=async function(s){let{addon:n,console:o}=s;const t=await n.tab.traps.getBlockly(),r=t.BlockSvg.prototype.bumpNeighbours_;t.BlockSvg.prototype.bumpNeighbours_=function(){n.self.disabled&&r.call(this)}}}}]);
+//# sourceMappingURL=addon-entry-no-script-bumping.js.map

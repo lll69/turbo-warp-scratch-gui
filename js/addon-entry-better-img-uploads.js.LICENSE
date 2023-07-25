@@ -1,0 +1,29 @@
+/*!**********************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/better-img-uploads/style.css ***!
+  \**********************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/better-img-uploads/icon.svg ***!
+  \*********************************************************************************************/
+
+/*! exports provided: default */
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/better-img-uploads/_runtime_entry.js ***!
+  \****************************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./style.css */
+
+/*! url-loader!./icon.svg */
+
+/*!************************************************************!*\
+  !*** ./src/addons/addons/better-img-uploads/userscript.js ***!
+  \************************************************************/

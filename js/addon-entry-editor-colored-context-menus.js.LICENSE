@@ -1,0 +1,25 @@
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/editor-colored-context-menus/userscript.css ***!
+  \*************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!**************************************************************************!*\
+  !*** ./src/addons/addons/editor-colored-context-menus/_runtime_entry.js ***!
+  \**************************************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./userscript.css */
+
+/*!**********************************************************************!*\
+  !*** ./src/addons/addons/editor-colored-context-menus/userscript.js ***!
+  \**********************************************************************/
+
+/*! exports provided: default */
+
+/*! ../../libraries/common/cs/text-color.esm.js */

@@ -1,0 +1,23 @@
+/*!********************************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/tw-remove-backpack/remove-backpack.css ***!
+  \********************************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!****************************************************************!*\
+  !*** ./src/addons/addons/tw-remove-backpack/_runtime_entry.js ***!
+  \****************************************************************/
+
+/*! exports provided: resources */
+
+/*! ./remove-backpack.js */
+
+/*! css-loader!./remove-backpack.css */
+
+/*!*****************************************************************!*\
+  !*** ./src/addons/addons/tw-remove-backpack/remove-backpack.js ***!
+  \*****************************************************************/
+
+/*! exports provided: default */

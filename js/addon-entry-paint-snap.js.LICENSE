@@ -1,0 +1,111 @@
+/*!******************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/paint-snap/userstyle.css ***!
+  \******************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!************************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/paint-snap/icons/decrement.svg ***!
+  \************************************************************************************************/
+
+/*! exports provided: default */
+
+/*!************************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/paint-snap/icons/increment.svg ***!
+  \************************************************************************************************/
+
+/*!******************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/paint-snap/icons/off.svg ***!
+  \******************************************************************************************/
+
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/paint-snap/icons/on.svg ***!
+  \*****************************************************************************************/
+
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/paint-snap/icons/settings.svg ***!
+  \***********************************************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/paint-snap/icons/snap.svg ***!
+  \*******************************************************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/addons/addons/paint-snap/_runtime_entry.js ***!
+  \********************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./userstyle.css */
+
+/*! url-loader!./icons/decrement.svg */
+
+/*! url-loader!./icons/increment.svg */
+
+/*! url-loader!./icons/off.svg */
+
+/*! url-loader!./icons/on.svg */
+
+/*! url-loader!./icons/settings.svg */
+
+/*! url-loader!./icons/snap.svg */
+
+/*!********************************************************!*\
+  !*** ./src/addons/addons/paint-snap/genScalePoints.js ***!
+  \********************************************************/
+
+/*! ./state.js */
+
+/*!*******************************************************!*\
+  !*** ./src/addons/addons/paint-snap/genSnapPoints.js ***!
+  \*******************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/addons/addons/paint-snap/helpers.js ***!
+  \*************************************************/
+
+/*! exports provided: loadModules, Modes, VectorModes, BitmapModes, GradientToolsModes */
+
+/*!***********************************************!*\
+  !*** ./src/addons/addons/paint-snap/state.js ***!
+  \***********************************************/
+
+/*! exports provided: snapOn, snapTo, snapFrom, threshold, guideColor, loadSettings, setSnapTo, setSnapFrom, setThreshold, enable, disable, toggle, setGuideColor */
+
+/*!********************************************!*\
+  !*** ./src/addons/addons/paint-snap/ui.js ***!
+  \********************************************/
+
+/*! exports provided: initUI */
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/paint-snap/updateScaleTool.js ***!
+  \*********************************************************/
+
+/*! exports provided: updateScaleTool */
+
+/*! ./genScalePoints.js */
+
+/*! ./genSnapPoints.js */
+
+/*! ./helpers.js */
+
+/*!**********************************************************!*\
+  !*** ./src/addons/addons/paint-snap/updateSelectTool.js ***!
+  \**********************************************************/
+
+/*! exports provided: updateSelectTool, isSelectTool */
+
+/*!****************************************************!*\
+  !*** ./src/addons/addons/paint-snap/userscript.js ***!
+  \****************************************************/
+
+/*! ./updateSelectTool.js */
+
+/*! ./ui.js */
+
+/*! ./updateScaleTool.js */

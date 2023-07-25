@@ -1,0 +1,21 @@
+/*!*************************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/custom-block-text/text-bold.css ***!
+  \*************************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!***************************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/custom-block-text/text-shadow.css ***!
+  \***************************************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/addons/addons/custom-block-text/_runtime_entry.js ***!
+  \***************************************************************/
+
+/*! exports provided: resources */
+
+/*! css-loader!./text-bold.css */
+
+/*! css-loader!./text-shadow.css */

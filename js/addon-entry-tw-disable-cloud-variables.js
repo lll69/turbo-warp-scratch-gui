@@ -1,0 +1,3 @@
+/*! For license information please see addon-entry-tw-disable-cloud-variables.js.LICENSE */
+(window.webpackJsonpGUI=window.webpackJsonpGUI||[]).push([["addon-entry-tw-disable-cloud-variables"],{"./src/addons/addons/tw-disable-cloud-variables/_runtime_entry.js":function(s,d,a){"use strict";a.r(d),a.d(d,"resources",(function(){return t}));const t={"userscript.js":a("./src/addons/addons/tw-disable-cloud-variables/userscript.js").default}},"./src/addons/addons/tw-disable-cloud-variables/userscript.js":function(s,d,a){"use strict";a.r(d),d.default=async function(s){let{addon:d}=s;d.tab.redux.dispatch({type:"tw/SET_CLOUD",cloud:!1})}}}]);
+//# sourceMappingURL=addon-entry-tw-disable-cloud-variables.js.map

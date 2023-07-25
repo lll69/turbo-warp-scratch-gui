@@ -1,0 +1,23 @@
+/*!*************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/mouse-pos/style.css ***!
+  \*************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!*******************************************************!*\
+  !*** ./src/addons/addons/mouse-pos/_runtime_entry.js ***!
+  \*******************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./style.css */
+
+/*!***************************************************!*\
+  !*** ./src/addons/addons/mouse-pos/userscript.js ***!
+  \***************************************************/
+
+/*! exports provided: default */

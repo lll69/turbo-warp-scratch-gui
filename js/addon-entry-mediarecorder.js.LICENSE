@@ -1,0 +1,29 @@
+/*!*****************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/mediarecorder/style.css ***!
+  \*****************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!***********************************************************!*\
+  !*** ./src/addons/addons/mediarecorder/_runtime_entry.js ***!
+  \***********************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./style.css */
+
+/*!*******************************************************!*\
+  !*** ./src/addons/addons/mediarecorder/userscript.js ***!
+  \*******************************************************/
+
+/*! exports provided: default */
+
+/*! ../../libraries/common/cs/download-blob.js */
+
+/*!*********************************************************!*\
+  !*** ./src/addons/libraries/common/cs/download-blob.js ***!
+  \*********************************************************/

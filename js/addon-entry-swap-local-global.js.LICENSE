@@ -1,0 +1,23 @@
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/swap-local-global/style.css ***!
+  \*********************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!***************************************************************!*\
+  !*** ./src/addons/addons/swap-local-global/_runtime_entry.js ***!
+  \***************************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./style.css */
+
+/*!***********************************************************!*\
+  !*** ./src/addons/addons/swap-local-global/userscript.js ***!
+  \***********************************************************/
+
+/*! exports provided: default */

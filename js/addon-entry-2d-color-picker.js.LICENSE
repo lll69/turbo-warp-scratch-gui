@@ -1,0 +1,55 @@
+/*!*******************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/2d-color-picker/style.css ***!
+  \*******************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/url-loader/dist/cjs.js!./src/addons/addons/2d-color-picker/assets/sv-gr.png ***!
+  \**************************************************************************************************/
+
+/*! exports provided: default */
+
+/*!*************************************************************!*\
+  !*** ./src/addons/addons/2d-color-picker/_runtime_entry.js ***!
+  \*************************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./style.css */
+
+/*! url-loader!./assets/sv-gr.png */
+
+/*!***********************************************************!*\
+  !*** ./src/addons/addons/2d-color-picker/paint-editor.js ***!
+  \***********************************************************/
+
+/*! ../../libraries/common/cs/normalize-color.js */
+
+/*! ../../libraries/common/cs/rate-limiter.js */
+
+/*! ../../libraries/thirdparty/cs/tinycolor-min.js */
+
+/*!*********************************************************!*\
+  !*** ./src/addons/addons/2d-color-picker/userscript.js ***!
+  \*********************************************************/
+
+/*! ./paint-editor.js */
+
+/*!***********************************************************!*\
+  !*** ./src/addons/libraries/common/cs/normalize-color.js ***!
+  \***********************************************************/
+
+/*! exports provided: getHexRegex, normalizeHex */
+
+/*!********************************************************!*\
+  !*** ./src/addons/libraries/common/cs/rate-limiter.js ***!
+  \********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./src/addons/libraries/thirdparty/cs/tinycolor-min.js ***!
+  \*************************************************************/

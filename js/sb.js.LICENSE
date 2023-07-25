@@ -1,0 +1,73 @@
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/imports-loader?Blockly=../shim/blocks_compressed_vertical,goog=../shim/blockly_compressed_vertical.goog!./node_modules/exports-loader?Blockly!./node_modules/scratch-blocks/msg/messages.js ***!
+  \******************************************************************************************************************************************************************************************************************/
+
+/*! no static exports found */
+
+/*! ../shim/blocks_compressed_vertical */
+
+/*! ../shim/blockly_compressed_vertical.goog */
+
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/imports-loader?Blockly=../shim/blocks_compressed_vertical-blockly_compressed_vertical-messages,goog=../shim/blockly_compressed_vertical.goog!./node_modules/exports-loader?Blockly!./node_modules/scratch-blocks/msg/scratch_msgs.js ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+
+/*! ../shim/blocks_compressed_vertical-blockly_compressed_vertical-messages */
+
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/imports-loader?Blockly=./shim/blockly_compressed_vertical.Blockly!./node_modules/exports-loader?Blockly!./node_modules/scratch-blocks/blocks_compressed.js ***!
+  \*********************************************************************************************************************************************************************************/
+
+/*! ./shim/blockly_compressed_vertical.Blockly */
+
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/imports-loader?goog=./shim/blockly_compressed_vertical.goog,Blockly=./shim/blockly_compressed_vertical-blocks_compressed!./node_modules/exports-loader?Blockly!./node_modules/scratch-blocks/blocks_compressed_vertical.js ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+
+/*! ./shim/blockly_compressed_vertical.goog */
+
+/*! ./shim/blockly_compressed_vertical-blocks_compressed */
+
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/imports-loader?this=>window!./node_modules/exports-loader?Blockly&goog!./node_modules/scratch-blocks/blockly_compressed_vertical.js ***!
+  \**********************************************************************************************************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/scratch-blocks/shim/blockly_compressed_vertical-blocks_compressed.js ***!
+  \*******************************************************************************************/
+
+/*! imports-loader?Blockly=./shim/blockly_compressed_vertical.Blockly!exports-loader?Blockly!../blocks_compressed */
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/scratch-blocks/shim/blockly_compressed_vertical.Blockly.js ***!
+  \*********************************************************************************/
+
+/*! ./blockly_compressed_vertical */
+
+/*!******************************************************************************!*\
+  !*** ./node_modules/scratch-blocks/shim/blockly_compressed_vertical.goog.js ***!
+  \******************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** ./node_modules/scratch-blocks/shim/blockly_compressed_vertical.js ***!
+  \*************************************************************************/
+
+/*! imports-loader?this=>window!exports-loader?Blockly&goog!../blockly_compressed_vertical */
+
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/scratch-blocks/shim/blocks_compressed_vertical-blockly_compressed_vertical-messages.js ***!
+  \*************************************************************************************************************/
+
+/*! imports-loader?Blockly=../shim/blocks_compressed_vertical,goog=../shim/blockly_compressed_vertical.goog!exports-loader?Blockly!../msg/messages */
+
+/*!************************************************************************!*\
+  !*** ./node_modules/scratch-blocks/shim/blocks_compressed_vertical.js ***!
+  \************************************************************************/
+
+/*! imports-loader?goog=./shim/blockly_compressed_vertical.goog,Blockly=./shim/blockly_compressed_vertical-blocks_compressed!exports-loader?Blockly!../blocks_compressed_vertical */
+
+/*!******************************************************!*\
+  !*** ./node_modules/scratch-blocks/shim/vertical.js ***!
+  \******************************************************/
+
+/*! imports-loader?Blockly=../shim/blocks_compressed_vertical-blockly_compressed_vertical-messages,goog=../shim/blockly_compressed_vertical.goog!exports-loader?Blockly!../msg/scratch_msgs */

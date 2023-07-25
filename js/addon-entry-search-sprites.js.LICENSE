@@ -1,0 +1,23 @@
+/*!***********************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/search-sprites/search-bar.css ***!
+  \***********************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!************************************************************!*\
+  !*** ./src/addons/addons/search-sprites/_runtime_entry.js ***!
+  \************************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./search-bar.css */
+
+/*!********************************************************!*\
+  !*** ./src/addons/addons/search-sprites/userscript.js ***!
+  \********************************************************/
+
+/*! exports provided: default */

@@ -1,0 +1,47 @@
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/fullscreen/hideOverflow.css ***!
+  \*********************************************************************************/
+
+/*! no static exports found */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*!********************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/fullscreen/hideToolbar.css ***!
+  \********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/fullscreen/removeBorder.css ***!
+  \*********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/fullscreen/resizeWindow.css ***!
+  \*********************************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/addons/addons/fullscreen/resizeWindow_noToolbar.css ***!
+  \*******************************************************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/addons/addons/fullscreen/_runtime_entry.js ***!
+  \********************************************************/
+
+/*! exports provided: resources */
+
+/*! ./userscript.js */
+
+/*! css-loader!./hideOverflow.css */
+
+/*! css-loader!./removeBorder.css */
+
+/*! css-loader!./resizeWindow.css */
+
+/*! css-loader!./resizeWindow_noToolbar.css */
+
+/*! css-loader!./hideToolbar.css */
+
+/*!****************************************************!*\
+  !*** ./src/addons/addons/fullscreen/userscript.js ***!
+  \****************************************************/
+
+/*! exports provided: default */
