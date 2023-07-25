@@ -38,6 +38,7 @@ class Monitor extends React.Component {
     constructor (props) {
         super(props);
         bindAll(this, [
+            'handleCopy',
             'handleDragEnd',
             'handleHide',
             'handleNextMode',
@@ -116,7 +117,7 @@ class Monitor extends React.Component {
         a.focus();
         a.select();
         document.execCommand("copy");
-        document.removeChild(a);
+        document.body.removeChild(a);
     }
     handleDragEnd (e, {x, y}) {
         const newX = parseInt(this.element.style.left, 10) + x;
@@ -235,7 +236,7 @@ class Monitor extends React.Component {
                     mode={this.props.mode}
                     targetId={this.props.targetId}
                     width={this.props.width}
-                    onCopy={this.handleCopy}
+                    onCopy={isList ? null : this.handleCopy}
                     onDragEnd={this.handleDragEnd}
                     onExport={isList ? this.handleExport : null}
                     onImport={isList ? this.handleImport : null}

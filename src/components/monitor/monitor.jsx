@@ -117,7 +117,7 @@ const MonitorComponent = props => (
                             id="gui.monitor.contextMenu.hide"
                         />
                     </BorderedMenuItem>}
-                {props.mode !== 'list' && props.onCopy &&
+                {props.onCopy &&
                     <MenuItem onClick={props.onCopy}>
                         <FormattedMessage
                             defaultMessage="Copy value"

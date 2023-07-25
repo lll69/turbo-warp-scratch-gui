@@ -21,6 +21,7 @@ const addons = [
     'color-picker',
     'remove-sprite-confirm',
     'block-count',
+    'comment-blocks',
     'onion-skinning',
     'paint-snap',
     'default-costume-editor-color',
